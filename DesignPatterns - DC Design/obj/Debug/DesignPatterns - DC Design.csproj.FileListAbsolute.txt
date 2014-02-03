@@ -1,0 +1,1 @@
+\\netstorage.eastern.ewu.edu\amccall\GitStuff\OtherFolder\DesignPatterns - DC Design\bin\Debug\DesignPatterns - DC Design.exe.config
