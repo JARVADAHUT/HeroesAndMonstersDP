@@ -11,8 +11,8 @@ namespace DesignPatterns___DC_Design
 
         public enum StatsType
         {
-            MaxHP,
-            CurHP,
+            MaxHp,
+            CurHp,
             MaxResources,
             CurResources,
             Intelegence,
@@ -20,5 +20,16 @@ namespace DesignPatterns___DC_Design
             Strength,
             Agility,
         }
+
+        public enum GearLocations
+        {
+            Head,
+            Torso,
+            Hands,
+            Legs,
+            Feet,
+        }
     }
+
+
 }

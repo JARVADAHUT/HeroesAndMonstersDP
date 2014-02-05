@@ -20,11 +20,13 @@ namespace DesignPatterns___DC_Design
             }
         }
 
-        public void replaceGear(string location, IGear newGear, out IGear oldGear)
+        public void ReplaceGear(string location, IGear newGear, out IGear oldGear)
         {
              oldGear = _gearSet[location];
              _gearSet.Remove(location);
              _gearSet.Add(location, newGear);
         }
+
+        public IGear GetGear()
     }
 }
