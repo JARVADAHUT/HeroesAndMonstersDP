@@ -13,29 +13,29 @@ namespace MazeTest
         protected string _name;
         private EnumDirection _lastMoveDirection;
 
-        abstract public void die();
+        abstract public void Die();
 
-        public override void interact(EnumDirection dir)
+        public void Interact(EnumDirection dir)
         {
-            this.setLastMove(dir);
+            this.SetLastMove(dir);
 
-            MazeObject interaction = getInteractionObject(dir);
+            MazeObject interaction = GetInteractionObject(dir);
 
-            interaction.interact(this);
+            interaction.Interact(this);
         }
 
-        public void setLastMove(EnumDirection dir)
+        public void SetLastMove(EnumDirection dir)
         {
             _lastMoveDirection = dir;
         }
 
-        public EnumDirection getLastMove()
+        public EnumDirection GetLastMove()
         {
             return _lastMoveDirection;
         }
 
         //could this go somewhere else? -- where?
-        private MazeObject getInteractionObject(EnumDirection dir)
+        private MazeObject GetInteractionObject(EnumDirection dir)
         {
             switch (dir)
             {

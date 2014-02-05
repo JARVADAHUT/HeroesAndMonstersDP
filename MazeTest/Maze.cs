@@ -19,10 +19,11 @@ namespace MazeTest
 
         private Maze()
         {
-
+            _displayer = new DefaultMazeDisplay();
+            _mazeGen = new DefaultMazeGenerator();
         }
 
-        public static Maze getInstance()
+        public static Maze GetInstance()
         {
             return _thisMaze ?? (_thisMaze = new Maze());
         }
@@ -34,20 +35,20 @@ namespace MazeTest
 
         public void Display()
         {
-            _displayer.display(_theMaze);
+            _displayer.DebugDisplay(_theMaze);
         }
 
-        public void generate(int size)
+        public void Generate(int size)
         {
-            _theMaze = _mazeGen.generate(size);
+            _theMaze = _mazeGen.Generate(size);
         }
 
-        public void setGenerator(IMazeGenerator mazeGen)
+        public void SetGenerator(IMazeGenerator mazeGen)
         {
             _mazeGen = mazeGen;
         }
 
-        public void setDiplayer(IMazeDisplay mazeDesp)
+        public void SetDiplayer(IMazeDisplay mazeDesp)
         {
             _displayer = mazeDesp;
         }

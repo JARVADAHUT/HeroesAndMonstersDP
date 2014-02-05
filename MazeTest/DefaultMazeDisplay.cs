@@ -13,35 +13,48 @@ namespace MazeTest
 
         }
 
-        public void display(MazeObject head)
+        public void Display(MazeObject head)
         {
+            Console.Clear();
+            MazeObject displayCol = head;
 
-            MazeObject temp = head;
-            int count = 0;
-            while(temp.getSurroundings().getDown() != null)//for (int x = 0; x < maze.Length; x++)
+            while(displayCol != null)//for (int x = 0; x < maze.Length; x++)
             {
-                
-                int goDown = 0;
-
-                while(goDown < count)
+  
+                MazeObject displayRow = displayCol;
+                while (displayRow != null)
                 {
-                    temp = temp.getSurroundings().getDown();
-                    goDown++;
+                    Console.Write(displayRow);
+
+                    displayRow = displayRow.getSurroundings().getRight();
                 }
 
-                if (temp == null)
-                    break;
-
-                while(temp != null)
-                {
-                    Console.Write(temp);
-
-                    temp = temp.getSurroundings().getRight();
-                }
-
-                temp = head;
+                displayCol = displayCol.getSurroundings().getDown();
                 Console.WriteLine();
-                count++;
+            }
+        }
+
+        public void DebugDisplay(MazeObject head)
+        {
+            Console.Clear();
+            MazeObject displayCol = head;
+
+            while (displayCol != null)//for (int x = 0; x < maze.Length; x++)
+            {
+
+                MazeObject displayRow = displayCol;
+                while (displayRow != null)
+                {
+                    if (displayRow.getSurroundings().getDown() == null)
+                        Console.Write("x");
+                    else
+                        Console.Write(displayRow);
+
+                    displayRow = displayRow.getSurroundings().getRight();
+                }
+
+                displayCol = displayCol.getSurroundings().getDown();
+                Console.WriteLine();
             }
         }
 

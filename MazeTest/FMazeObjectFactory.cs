@@ -8,7 +8,7 @@ namespace MazeTest
 {
     class FMazeObjectFactory
     {
-        public static MazeObject getMazeObject(int s)
+        public static MazeObject GetMazeObject(int s)
         {
             switch ((EnumMazeObject)s)
             {

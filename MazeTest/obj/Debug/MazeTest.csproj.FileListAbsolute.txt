@@ -12,3 +12,9 @@ C:\Users\Bruce\Documents\Visual Studio 2012\Projects\MazeTest (2)\MazeTest\MazeT
 N:\GitStuff\HeroesAndMonstersDP\MazeTest\bin\Debug\MazeTest.exe.config
 N:\GitStuff\HeroesAndMonstersDP\MazeTest\obj\Debug\MazeTest.exe
 N:\GitStuff\HeroesAndMonstersDP\MazeTest\obj\Debug\MazeTest.pdb
+N:\HEROSANDMONSTERS AHHHH\THIS IS SPARTA\MazeTest\bin\Debug\MazeTest.exe.config
+N:\HEROSANDMONSTERS AHHHH\THIS IS SPARTA\MazeTest\obj\Debug\MazeTest.exe
+N:\HEROSANDMONSTERS AHHHH\THIS IS SPARTA\MazeTest\obj\Debug\MazeTest.pdb
+N:\HEROSANDMONSTERS AHHHH\THIS IS SPARTA\MazeTest\obj\Debug\MazeTest.csprojResolveAssemblyReference.cache
+N:\HEROSANDMONSTERS AHHHH\THIS IS SPARTA\MazeTest\bin\Debug\MazeTest.exe
+N:\HEROSANDMONSTERS AHHHH\THIS IS SPARTA\MazeTest\bin\Debug\MazeTest.pdb

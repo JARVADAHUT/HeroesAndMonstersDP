@@ -9,21 +9,25 @@ namespace MazeTest
     static class MazeMover
     {
 
-        public static bool move(EnumDirection dir, MazeObject movee)
+        public static void Move(EnumDirection dir, MazeObject movee)
         {
             switch (dir)
             {
                 case EnumDirection.Up:
-                    return swapUpDown(movee.getSurroundings().getUp(), movee);
+                    SwapUpDown(movee.getSurroundings().getUp(), movee);
+                    break;
 
                 case EnumDirection.Down:
-                    return swapUpDown(movee, movee.getSurroundings().getDown());
+                    SwapUpDown(movee, movee.getSurroundings().getDown());
+                    break;
 
                 case EnumDirection.Left:
-                    return swapLeftRight(movee, movee.getSurroundings().getLeft());
+                    SwapLeftRight(movee, movee.getSurroundings().getLeft());
+                    break;
 
                 case EnumDirection.Right:
-                    return swapLeftRight(movee.getSurroundings().getRight(), movee);
+                    SwapLeftRight(movee.getSurroundings().getRight(), movee);
+                    break;
 
                 default:
                     throw new UnauthorizedAccessException();
@@ -32,7 +36,7 @@ namespace MazeTest
 
         }
 
-        private static bool swapUpDown(MazeObject from, MazeObject to)
+        private static void SwapUpDown(MazeObject from, MazeObject to)
         {
             //link all the outer nodes looking at the two being swapped
             from.getSurroundings().getLeft().getSurroundings().setRight( to );
@@ -40,7 +44,7 @@ namespace MazeTest
             from.getSurroundings().getRight().getSurroundings().setLeft( to );
 
             to.getSurroundings().getLeft().getSurroundings().setRight( from );
-            to.getSurroundings().getDown().getSurroundings().setUp( from );
+            to.getSurroundings().getDown().getSurroundings().setUp( from ); // always blows here
             to.getSurroundings().getRight().getSurroundings().setLeft( from );
 
 
@@ -59,10 +63,9 @@ namespace MazeTest
             to.getSurroundings().setDown(from);
             from.getSurroundings().setUp(to);
             
-            return true;
         }
 
-        private static bool swapLeftRight(MazeObject from, MazeObject to)
+        private static void SwapLeftRight(MazeObject from, MazeObject to)
         {
 
             //link all the outer nodes looking at the two being swapped
@@ -89,8 +92,6 @@ namespace MazeTest
 
             to.getSurroundings().setLeft(from);
             from.getSurroundings().setRight(to);
-
-            return true;
         }
 
 

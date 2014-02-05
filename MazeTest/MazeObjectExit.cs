@@ -16,9 +16,11 @@ namespace MazeTest
             //_nextLevel = nextLevel;
         }
 
-        public override void interact(LivingCreature creature)
+        public override void Interact(LivingCreature creature)
         {
-
+            Maze.GetInstance().Exit();
+            Maze maze = Maze.GetInstance();
+            maze.Generate(10);
         }
         public override string ToString()
         {

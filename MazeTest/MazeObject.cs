@@ -28,25 +28,17 @@ namespace MazeTest
         //abstract public bool interact();
         //abstract public bool interact(Direction d);
 
-        public void setDiscovered(bool b)
+        public void SetDiscovered(bool b)
         {
             _discovered = b;
         }
 
-        public bool getDiscovered()
+        public bool GetDiscovered()
         {
             return _discovered;
         }
 
-        protected bool move(EnumDirection dir)
-        {
-            MazeMover.move(dir, this);
-
-
-            return false;
-        }
-
-        public abstract void interact(LivingCreature creature);
+        public abstract void Interact(LivingCreature creature);
 
         public Surroundings getSurroundings()
         {

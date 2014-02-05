@@ -21,7 +21,7 @@ namespace MazeTest
             return _thisPlayer ?? (_thisPlayer = new Player());
         }
 
-        public override void die()
+        public override void Die()
         {
 
         }
@@ -31,7 +31,7 @@ namespace MazeTest
             return "p";
         }
 
-        public override void interact(LivingCreature l)
+        public override void Interact(LivingCreature l)
         {
 
         }

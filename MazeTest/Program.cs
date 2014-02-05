@@ -14,10 +14,8 @@ namespace MazeTest
             Player p = Player.getInstance();
 
 
-            Maze maze = Maze.getInstance();
-            maze.setGenerator(new DefaultMazeGenerator());
-            maze.setDiplayer(new DefaultMazeDisplay());
-            maze.generate(50);
+            Maze maze = Maze.GetInstance();
+            maze.Generate(10);
 
             maze.Display();
 
@@ -29,22 +27,22 @@ namespace MazeTest
                 switch(k.KeyChar)
                 {
                     case 'w':
-                        p.interact(EnumDirection.Up);
+                        p.Interact(EnumDirection.Up);
                         break;
                     case 'a':
-                        p.interact(EnumDirection.Left);
+                        p.Interact(EnumDirection.Left);
                         break;
                     case 's':
-                        p.interact(EnumDirection.Down);
+                        p.Interact(EnumDirection.Down);
                         break;
                     case 'd':
-                        p.interact(EnumDirection.Right);
+                        p.Interact(EnumDirection.Right);
                         break;
                 }
 
-                Console.Clear();
-                
-                maze.Display();
+
+
+                Maze.GetInstance().Display();
 
 
 
