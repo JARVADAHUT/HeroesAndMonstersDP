@@ -8,6 +8,6 @@ namespace DesignPatterns___DC_Design
 {
     interface IInventoryItem
     {
-        public void UseItem(Target target);
+        void UseItem(Target target);
     }
 }

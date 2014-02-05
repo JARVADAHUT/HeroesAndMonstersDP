@@ -9,7 +9,7 @@ namespace DesignPatterns___DC_Design
     class Hero : DungeonCharacter
     {
         
-        public void useAction(int ActionNumber)
+        public override void useAction(int ActionNumber)
         {
             
         }

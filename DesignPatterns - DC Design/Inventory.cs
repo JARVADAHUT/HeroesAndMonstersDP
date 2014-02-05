@@ -25,7 +25,7 @@ namespace DesignPatterns___DC_Design
             this.sortedInventory.Add(potion);
         }
 
-        public void addGear(IGear gear)
+        public void addGear(Gear gear)
         {
             this.gear.Add(gear);
             this.sortedInventory.Add(gear);

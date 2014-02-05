@@ -6,14 +6,26 @@ using System.Threading.Tasks;
 
 namespace DesignPatterns___DC_Design
 {
-    abstract class StatAugmentCommand
+    class StatAugmentCommand
     {
         public PublicEnums.StatsType Stat { get; set; }
+        public int AugmentAmt { get; set; }
 
-        public abstract void ApplyAugment(int statValue);
-        public abstract void RemoveAugment(int statValue);
+        public StatAugmentCommand(PublicEnums.StatsType stat, int augmentAmt)
+        {
+            this.Stat = stat;
+            this.AugmentAmt = augmentAmt;
+        }
 
-        private abstract int ValidateNewStat(int statValue);
+        public int ApplyAugment(int statValue)
+        {
+            return statValue + AugmentAmt;
+        }
+
+        public int RemoveAugment(int statValue)
+        {
+            return statValue - AugmentAmt;
+        }
 
     }
 }

@@ -15,7 +15,7 @@ namespace DesignPatterns___DC_Design
         List<ICombatAction> _combatActions;
         Inventory inventory;
 
-        abstract void useAction(int ActionNumber); //This is just an idea
+        public abstract void useAction(int ActionNumber); //This is just an idea
 
         //Returns the index number of the action (used above)
         public int registerAction(ICombatAction action)

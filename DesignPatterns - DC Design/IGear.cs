@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace DesignPatterns___DC_Design
 {
-    interface IGear : IInventoryItem
+    abstract class Gear : IInventoryItem
     {
-        //Incomplete Interface
+
+        StatAugmentCommand _statAugment;
     }
 }

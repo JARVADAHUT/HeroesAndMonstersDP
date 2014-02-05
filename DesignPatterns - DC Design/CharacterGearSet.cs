@@ -8,25 +8,25 @@ namespace DesignPatterns___DC_Design
 {
     class CharacterGearSet
     {
-        Dictionary<string, IGear> _gearSet;
+        Dictionary<string, Gear> _gearSet;
 
         public CharacterGearSet(string[] locations)
         {
-            _gearSet = new Dictionary<string, IGear>(locations.Length);
+            _gearSet = new Dictionary<string, Gear>(locations.Length);
             foreach (string loc in locations)
             {
-                IGear nullGear = new NullGear();
+                Gear nullGear = new NullGear();
                 _gearSet.Add(loc, nullGear);
             }
         }
 
-        public void ReplaceGear(string location, IGear newGear, out IGear oldGear)
+        public void ReplaceGear(string location, Gear newGear, out Gear oldGear)
         {
              oldGear = _gearSet[location];
              _gearSet.Remove(location);
              _gearSet.Add(location, newGear);
         }
 
-        public IGear GetGear()
+        public Gear GetGear()
     }
 }

@@ -17,7 +17,7 @@ namespace DesignPatterns___DC_Design
             {
                 PublicEnums.StatsType statForAugment = augment.Stat;
                 var statValue = _stats[statForAugment];
-                augment.ApplyAugment(statValue);
+                _stats[statForAugment] = augment.ApplyAugment(statValue);
             }
         }
 

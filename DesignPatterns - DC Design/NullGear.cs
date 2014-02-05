@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace DesignPatterns___DC_Design
 {
-    class NullGear : IGear
+    class NullGear : Gear
     {
+        public void UseItem(Target target)
+        {
+            //NulledOut
+        }
     }
 }
