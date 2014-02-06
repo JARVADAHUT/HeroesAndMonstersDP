@@ -35,7 +35,7 @@ namespace MazeTest
 
         public void Display()
         {
-            _displayer.DebugDisplay(_theMaze);
+            _displayer.Display(_theMaze);
         }
 
         public void Generate(int size)

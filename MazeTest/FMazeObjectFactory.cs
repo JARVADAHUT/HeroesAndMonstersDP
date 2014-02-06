@@ -22,7 +22,7 @@ namespace MazeTest
                     return new MazeObjectExit();
 
                 case EnumMazeObject.Player:
-                    return Player.getInstance();
+                    return Player.GetInstance();
 
                 case EnumMazeObject.Monster:
                     return null;

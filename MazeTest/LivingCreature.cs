@@ -40,20 +40,25 @@ namespace MazeTest
             switch (dir)
             {
                 case EnumDirection.Up:
-                    return _surroundings.getUp();
+                    return _surroundings.GetUp();
 
                 case EnumDirection.Down:
-                    return _surroundings.getDown();
+                    return _surroundings.GetDown();
 
                 case EnumDirection.Left:
-                    return _surroundings.getLeft();
+                    return _surroundings.GetLeft();
 
                 case EnumDirection.Right:
-                    return _surroundings.getRight();
+                    return _surroundings.GetRight();
 
                 default:
                     throw new FieldAccessException();
             }
+        }
+
+        public void ResetPosition()
+        {
+            _surroundings = new Surroundings();
         }
 
     }

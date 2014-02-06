@@ -50,27 +50,25 @@ namespace MazeTest
         //getters-------------------------------
 
 
-        public MazeObject getLeft()
+        public MazeObject GetLeft()
         {
             return _left;
         }
 
-        public MazeObject getRight()
+        public MazeObject GetRight()
         {
             return _right;
         }
 
-        public MazeObject getUp()
+        public MazeObject GetUp()
         {
             return _up;
         }
 
-        public MazeObject getDown()
+        public MazeObject GetDown()
         {
             return _down;
         }
-
-
 
     }
 }

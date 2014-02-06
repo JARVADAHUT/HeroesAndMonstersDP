@@ -26,37 +26,45 @@ namespace MazeTest
                 {
                     Console.Write(displayRow);
 
-                    displayRow = displayRow.getSurroundings().getRight();
+                    displayRow = displayRow.getSurroundings().GetRight();
                 }
 
-                displayCol = displayCol.getSurroundings().getDown();
+                displayCol = displayCol.getSurroundings().GetDown();
                 Console.WriteLine();
             }
         }
 
-        public void DebugDisplay(MazeObject head)
-        {
-            Console.Clear();
-            MazeObject displayCol = head;
+        //public void DebugDisplay(MazeObject head)
+        //{
+        //    //Console.Clear();
+        //    MazeObject displayCol = head;
 
-            while (displayCol != null)//for (int x = 0; x < maze.Length; x++)
-            {
+        //    bool hadNull = false;
 
-                MazeObject displayRow = displayCol;
-                while (displayRow != null)
-                {
-                    if (displayRow.getSurroundings().getDown() == null)
-                        Console.Write("x");
-                    else
-                        Console.Write(displayRow);
+        //    while (displayCol != null)//for (int x = 0; x < maze.Length; x++)
+        //    {
 
-                    displayRow = displayRow.getSurroundings().getRight();
-                }
+        //        MazeObject displayRow = displayCol;
+        //        while (displayRow != null)
+        //        {
+        //            if (displayRow.getSurroundings().IsDownNull() && displayRow.ToString().Equals("a"))
+        //            {
+        //                Console.Write("x");
+        //                hadNull = true;
+        //            }
+        //            else
+        //                Console.Write(displayRow);
 
-                displayCol = displayCol.getSurroundings().getDown();
-                Console.WriteLine();
-            }
-        }
+        //            displayRow = displayRow.getSurroundings().GetRight();
+        //        }
+
+        //        displayCol = displayCol.getSurroundings().GetDown();
+        //        Console.WriteLine();
+        //    }
+
+        //    if(hadNull)
+        //        Console.WriteLine("There was a null down reference");
+        //}
 
     }
 }

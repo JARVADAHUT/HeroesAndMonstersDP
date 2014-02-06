@@ -18,3 +18,9 @@ N:\HEROSANDMONSTERS AHHHH\THIS IS SPARTA\MazeTest\obj\Debug\MazeTest.pdb
 N:\HEROSANDMONSTERS AHHHH\THIS IS SPARTA\MazeTest\obj\Debug\MazeTest.csprojResolveAssemblyReference.cache
 N:\HEROSANDMONSTERS AHHHH\THIS IS SPARTA\MazeTest\bin\Debug\MazeTest.exe
 N:\HEROSANDMONSTERS AHHHH\THIS IS SPARTA\MazeTest\bin\Debug\MazeTest.pdb
+\\netstorage.eastern.ewu.edu\johnnyb\HEROSANDMONSTERS AHHHH\THIS IS SPARTA\MazeTest\bin\Debug\MazeTest.exe.config
+\\netstorage.eastern.ewu.edu\johnnyb\HEROSANDMONSTERS AHHHH\THIS IS SPARTA\MazeTest\obj\Debug\MazeTest.exe
+\\netstorage.eastern.ewu.edu\johnnyb\HEROSANDMONSTERS AHHHH\THIS IS SPARTA\MazeTest\obj\Debug\MazeTest.pdb
+\\netstorage.eastern.ewu.edu\johnnyb\HEROSANDMONSTERS AHHHH\THIS IS SPARTA\MazeTest\bin\Debug\MazeTest.exe
+\\netstorage.eastern.ewu.edu\johnnyb\HEROSANDMONSTERS AHHHH\THIS IS SPARTA\MazeTest\bin\Debug\MazeTest.pdb
+\\netstorage.eastern.ewu.edu\johnnyb\HEROSANDMONSTERS AHHHH\THIS IS SPARTA\MazeTest\obj\Debug\MazeTest.csprojResolveAssemblyReference.cache

@@ -16,7 +16,7 @@ namespace MazeTest
 
         }
 
-        public static Player getInstance()
+        public static Player GetInstance()
         {
             return _thisPlayer ?? (_thisPlayer = new Player());
         }
@@ -35,6 +35,8 @@ namespace MazeTest
         {
 
         }
+
+        
 
     }
 }

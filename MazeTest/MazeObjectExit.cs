@@ -20,6 +20,7 @@ namespace MazeTest
         {
             Maze.GetInstance().Exit();
             Maze maze = Maze.GetInstance();
+            creature.ResetPosition();
             maze.Generate(10);
         }
         public override string ToString()

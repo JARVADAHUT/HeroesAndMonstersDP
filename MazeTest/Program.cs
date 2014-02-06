@@ -11,7 +11,7 @@ namespace MazeTest
     {
         static void Main(string[] args)
         {
-            Player p = Player.getInstance();
+            Player p = Player.GetInstance();
 
 
             Maze maze = Maze.GetInstance();

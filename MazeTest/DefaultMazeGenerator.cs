@@ -6,13 +6,19 @@ namespace MazeTest
 {
     internal class DefaultMazeGenerator : IMazeGenerator
     {
-        private readonly int minSize = 10;
+        public DefaultMazeGenerator()
+        {
+            
+
+        }
+
+        private const int _minSize = 10;
 
         #region MazeGeration
 
         public MazeObject Generate(int size)
         {
-            if (size < minSize)
+            if (size < _minSize)
                 return null;
 
 
@@ -154,50 +160,52 @@ namespace MazeTest
 
         private MazeObject arrayToGraph(int[][] maze)
         {
-            MazeObject _head = null;
+            MazeObject head = null;
 
-            _head = new MazeObjectWall();
+            head = new MazeObjectWall();
 
             for (int r = 0; r < maze.Length; r++)
             {
-                MazeObject temp = _head;
+                MazeObject temp = head;
                 for (int z = 0; z < r; z++)
                 {
-                    temp = temp.getSurroundings().getDown();
+                    temp = temp.getSurroundings().GetDown();
                 }
 
                 for (int c = 0; c < maze[0].Length; c++)
                 {
-                    if (r > 0)
-                    {
-                        int up = maze[r - 1][c];
-                        if (temp.getSurroundings().getUp() == null)
-                        {
-                            temp.getSurroundings().setUp(FMazeObjectFactory.GetMazeObject(up));
-                            temp.getSurroundings().getUp().getSurroundings().setDown(temp);
-                        }
-                    }
-                    if (c > 0)
-                    {
-                        int left = maze[r][c - 1];
-                        if (temp.getSurroundings().getLeft() == null)
-                        {
-                            temp.getSurroundings().setLeft(FMazeObjectFactory.GetMazeObject(left));
-                            temp.getSurroundings().getLeft().getSurroundings().setRight(temp);
-                        }
-                    }
+                    //if (r > 0)
+                    //{
+                    //    int up = maze[r - 1][c];
+                    //    if (temp.getSurroundings().GetUp() == null)
+                    //    {
+                    //        temp.getSurroundings().setUp(FMazeObjectFactory.GetMazeObject(up));
+                    //        temp.getSurroundings().GetUp().getSurroundings().setDown(temp);
+                    //    }
+                    //}
+
+                    //if (c > 0)
+                    //{
+                    //    int left = maze[r][c - 1];
+                    //    if (temp.getSurroundings().GetLeft() == null)
+                    //    {
+                    //        temp.getSurroundings().setLeft(FMazeObjectFactory.GetMazeObject(left));
+                    //        temp.getSurroundings().GetLeft().getSurroundings().setRight(temp);
+                    //    }
+                    //}
+
                     if (r < maze.Length - 1)
                     {
                         int down = maze[r + 1][c];
-                        if (temp.getSurroundings().getDown() == null)
+                        if (temp.getSurroundings().GetDown() == null)
                         {
                             temp.getSurroundings().setDown(FMazeObjectFactory.GetMazeObject(down));
-                            temp.getSurroundings().getDown().getSurroundings().setUp(temp);
+                            temp.getSurroundings().GetDown().getSurroundings().setUp(temp);
 
                             if (c > 0)
                             {
-                                MazeObject downBelow = temp.getSurroundings().getDown();
-                                MazeObject downLeft = temp.getSurroundings().getLeft().getSurroundings().getDown();
+                                MazeObject downBelow = temp.getSurroundings().GetDown();
+                                MazeObject downLeft = temp.getSurroundings().GetLeft().getSurroundings().GetDown();
 
                                 downBelow.getSurroundings().setLeft(downLeft);
                                 downLeft.getSurroundings().setRight(downBelow);
@@ -207,14 +215,14 @@ namespace MazeTest
                     if (c < maze[0].Length - 1)
                     {
                         int right = maze[r][c + 1];
-                        if (temp.getSurroundings().getRight() == null)
+                        if (temp.getSurroundings().GetRight() == null)
                         {
                             temp.getSurroundings().setRight(FMazeObjectFactory.GetMazeObject(right));
-                            temp.getSurroundings().getRight().getSurroundings().setLeft(temp);
+                            temp.getSurroundings().GetRight().getSurroundings().setLeft(temp);
                         }
                     }
 
-                    temp = temp.getSurroundings().getRight();
+                    temp = temp.getSurroundings().GetRight();
                 }
             }
 
@@ -222,7 +230,7 @@ namespace MazeTest
             //Player.getInstance().setPosition( _head.getSurroundings().getDown().getSurroundings().getRight() );
 
 
-            return _head;
+            return head;
         } //end Generate
 
 
