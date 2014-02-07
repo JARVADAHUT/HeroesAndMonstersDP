@@ -30,3 +30,6 @@ C:\Users\Bruce\Documents\GitHub\HeroesAndMonstersDP\MazeTest\obj\Debug\MazeTest.
 C:\Users\Bruce\Documents\GitHub\HeroesAndMonstersDP\MazeTest\bin\Debug\MazeTest.exe
 C:\Users\Bruce\Documents\GitHub\HeroesAndMonstersDP\MazeTest\bin\Debug\MazeTest.pdb
 C:\Users\Bruce\Documents\GitHub\HeroesAndMonstersDP\MazeTest\obj\Debug\MazeTest.csprojResolveAssemblyReference.cache
+C:\Users\mcandertoad\Documents\GitHub\HeroesAndMonstersDP\MazeTest\bin\Debug\MazeTest.exe.config
+C:\Users\mcandertoad\Documents\GitHub\HeroesAndMonstersDP\MazeTest\obj\Debug\MazeTest.exe
+C:\Users\mcandertoad\Documents\GitHub\HeroesAndMonstersDP\MazeTest\obj\Debug\MazeTest.pdb

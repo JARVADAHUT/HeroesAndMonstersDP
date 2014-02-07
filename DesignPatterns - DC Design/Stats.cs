@@ -11,19 +11,43 @@ namespace DesignPatterns___DC_Design
 
         Dictionary<PublicEnums.StatsType, int> _stats;
 
-        public void augmentStat(StatAugmentCommand augment)
+
+        public void ApplyAugment(PublicEnums.StatsType stat, int magnitude)
         {
-            if (Validate(augment))
-            {
-                PublicEnums.StatsType statForAugment = augment.Stat;
-                var statValue = _stats[statForAugment];
-                augment.ApplyAugment(statValue);
-            }
+            int moddingStat = _stats[stat];
+            moddingStat += magnitude;
+            moddingStat = validateStat(stat, moddingStat);
+            _stats[stat] = moddingStat;
         }
 
-        private bool Validate(StatAugmentCommand augment)
+        public void RemoveAugment(PublicEnums.StatsType stat, int magnitude)
         {
-            return _stats.ContainsKey(augment.Stat);
+            int moddingStat = _stats[stat];
+            moddingStat -= magnitude;
+            moddingStat = validateStat(stat, moddingStat);
+            _stats[stat] = moddingStat;
+        }
+
+        private int validateStat(PublicEnums.StatsType stat, int magnitude)
+        {
+            switch (stat)
+            {
+                case (PublicEnums.StatsType.CurHp):
+                    if (magnitude > _stats[PublicEnums.StatsType.MaxHp])
+                    {
+                        magnitude = _stats[PublicEnums.StatsType.MaxHp];
+                    }
+                    break;
+                case (PublicEnums.StatsType.CurResources):
+                    if (magnitude > _stats[PublicEnums.StatsType.MaxResources])
+                    {
+                        magnitude = _stats[PublicEnums.StatsType.MaxResources];
+                    }
+                    break;
+            }
+            if (magnitude < 0)
+                magnitude = 0;
+            return magnitude;
         }
         /*
         int _maxHP, _curHp;

@@ -6,14 +6,37 @@ using System.Threading.Tasks;
 
 namespace DesignPatterns___DC_Design
 {
-    abstract class StatAugmentCommand
+    public class StatAugmentCommand
     {
         public PublicEnums.StatsType Stat { get; set; }
+        public int Magnitude { set; get; }
+        public int Delay { set; get; }
+        public int Duration { set; get; }
 
-        public abstract void ApplyAugment(int statValue);
-        public abstract void RemoveAugment(int statValue);
+        private Stats _characterStats;
 
-        private abstract int ValidateNewStat(int statValue);
+        public StatAugmentCommand(PublicEnums.StatsType statForMod, Stats stats, int magnitude, int delay, int duration)
+        {
+            this.Stat = statForMod;
+            this._characterStats = stats;
+            this.Magnitude = magnitude;
+            this.Delay = delay;
+            this.Duration = duration;
+        }
+
+        public StatAugmentCommand(PublicEnums.StatsType statForMod, Stats stats, int magnitude) : this(statForMod, stats, magnitude, 0, 0)
+        {
+        }
+
+        public void ApplyAugment()
+        {
+            _characterStats.ApplyAugment(Stat, Magnitude);
+        }
+
+        public void RemoveAugment()
+        {
+            _characterStats.RemoveAugment(Stat, Magnitude);
+        }
 
     }
 }
