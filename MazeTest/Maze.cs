@@ -12,15 +12,20 @@ namespace MazeTest
         //singleton object
         private static Maze _thisMaze = null;
 
+        private static readonly int _sizeIncreasePerMaze = 2;
+
         private IMazeDisplay _displayer;
         private MazeObject _theMaze;
         private IMazeGenerator _mazeGen;
+        private int _lastSize;
+
 
 
         private Maze()
         {
             _displayer = new DefaultMazeDisplay();
             _mazeGen = new DefaultMazeGenerator();
+
         }
 
         public static Maze GetInstance()
@@ -28,19 +33,21 @@ namespace MazeTest
             return _thisMaze ?? (_thisMaze = new Maze());
         }
 
-        public void Exit()
-        {
-            _thisMaze = null;
-        }
-
         public void Display()
         {
             _displayer.Display(_theMaze);
         }
 
+        public void GenerateNext()
+        {
+            _lastSize += _sizeIncreasePerMaze;
+            _theMaze = _mazeGen.Generate(_lastSize);
+        }
+
         public void Generate(int size)
         {
             _theMaze = _mazeGen.Generate(size);
+            _lastSize = size;
         }
 
         public void SetGenerator(IMazeGenerator mazeGen)

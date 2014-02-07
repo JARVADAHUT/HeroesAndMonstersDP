@@ -12,14 +12,16 @@ namespace MazeTest
 
         }
 
-        private const int _minSize = 10;
+        private const int _minSize = 4;
 
         #region MazeGeration
+
+        #region 2D Array Generation
 
         public MazeObject Generate(int size)
         {
             if (size < _minSize)
-                return null;
+                throw new FormatException("Maze too small");
 
 
             int[][] maze;
@@ -158,102 +160,26 @@ namespace MazeTest
             return arrayToGraph(maze);
         }
 
-        private MazeObject arrayToGraph(int[][] maze)
-        {
-            MazeObject head = null;
-
-            head = new MazeObjectWall();
-
-            for (int r = 0; r < maze.Length; r++)
-            {
-                MazeObject temp = head;
-                for (int z = 0; z < r; z++)
-                {
-                    temp = temp.getSurroundings().GetDown();
-                }
-
-                for (int c = 0; c < maze[0].Length; c++)
-                {
-                    //if (r > 0)
-                    //{
-                    //    int up = maze[r - 1][c];
-                    //    if (temp.getSurroundings().GetUp() == null)
-                    //    {
-                    //        temp.getSurroundings().setUp(FMazeObjectFactory.GetMazeObject(up));
-                    //        temp.getSurroundings().GetUp().getSurroundings().setDown(temp);
-                    //    }
-                    //}
-
-                    //if (c > 0)
-                    //{
-                    //    int left = maze[r][c - 1];
-                    //    if (temp.getSurroundings().GetLeft() == null)
-                    //    {
-                    //        temp.getSurroundings().setLeft(FMazeObjectFactory.GetMazeObject(left));
-                    //        temp.getSurroundings().GetLeft().getSurroundings().setRight(temp);
-                    //    }
-                    //}
-
-                    if (r < maze.Length - 1)
-                    {
-                        int down = maze[r + 1][c];
-                        if (temp.getSurroundings().GetDown() == null)
-                        {
-                            temp.getSurroundings().setDown(FMazeObjectFactory.GetMazeObject(down));
-                            temp.getSurroundings().GetDown().getSurroundings().setUp(temp);
-
-                            if (c > 0)
-                            {
-                                MazeObject downBelow = temp.getSurroundings().GetDown();
-                                MazeObject downLeft = temp.getSurroundings().GetLeft().getSurroundings().GetDown();
-
-                                downBelow.getSurroundings().setLeft(downLeft);
-                                downLeft.getSurroundings().setRight(downBelow);
-                            }
-                        }
-                    }
-                    if (c < maze[0].Length - 1)
-                    {
-                        int right = maze[r][c + 1];
-                        if (temp.getSurroundings().GetRight() == null)
-                        {
-                            temp.getSurroundings().setRight(FMazeObjectFactory.GetMazeObject(right));
-                            temp.getSurroundings().GetRight().getSurroundings().setLeft(temp);
-                        }
-                    }
-
-                    temp = temp.getSurroundings().GetRight();
-                }
-            }
-
-
-            //Player.getInstance().setPosition( _head.getSurroundings().getDown().getSurroundings().getRight() );
-
-
-            return head;
-        } //end Generate
-
-
         private bool OneWayIn(int x, int y, int[][] maze)
         {
-            if ((x != 1 || y != 1) && maze[x][y] == (int) EnumMazeObject.Air)
+            if ((x != 1 || y != 1) && maze[x][y] == (int)EnumMazeObject.Air)
             {
                 int numSurfaceAir = 0;
 
-                if (maze[x - 1][y] == (int) EnumMazeObject.Air || maze[x - 1][y] == (int) EnumMazeObject.Chest ||
-                    maze[x - 1][y] == (int) EnumMazeObject.Exit)
+                if (maze[x - 1][y] == (int)EnumMazeObject.Air || maze[x - 1][y] == (int)EnumMazeObject.Chest ||
+                    maze[x - 1][y] == (int)EnumMazeObject.Exit)
                     numSurfaceAir++;
 
-                if (maze[x + 1][y] == (int) EnumMazeObject.Air || maze[x + 1][y] == (int) EnumMazeObject.Chest ||
-                    maze[x + 1][y] == (int) EnumMazeObject.Exit)
+                if (maze[x + 1][y] == (int)EnumMazeObject.Air || maze[x + 1][y] == (int)EnumMazeObject.Chest ||
+                    maze[x + 1][y] == (int)EnumMazeObject.Exit)
                     numSurfaceAir++;
 
-                if (maze[x][y - 1] == (int) EnumMazeObject.Air || maze[x][y - 1] == (int) EnumMazeObject.Chest ||
-                    maze[x][y - 1] == (int) EnumMazeObject.Exit)
+                if (maze[x][y - 1] == (int)EnumMazeObject.Air || maze[x][y - 1] == (int)EnumMazeObject.Chest ||
+                    maze[x][y - 1] == (int)EnumMazeObject.Exit)
                     numSurfaceAir++;
 
-                if (maze[x][y + 1] == (int) EnumMazeObject.Air || maze[x][y + 1] == (int) EnumMazeObject.Chest ||
-                    maze[x][y + 1] == (int) EnumMazeObject.Exit)
+                if (maze[x][y + 1] == (int)EnumMazeObject.Air || maze[x][y + 1] == (int)EnumMazeObject.Chest ||
+                    maze[x][y + 1] == (int)EnumMazeObject.Exit)
                     numSurfaceAir++;
 
                 if (numSurfaceAir == 1)
@@ -266,34 +192,100 @@ namespace MazeTest
         private void AddWalls(int r, int c, List<string> walls, int[][] maze, int height, int width)
         {
             //add wall above
-            if ((r - 1) > 0 && (maze[r - 1][c] == (int) EnumMazeObject.Wall))
-                if (maze[r - 1][c - 1] == (int) EnumMazeObject.Wall && maze[r - 2][c - 1] == (int) EnumMazeObject.Wall &&
-                    maze[r - 2][c] == (int) EnumMazeObject.Wall && maze[r - 2][c + 1] == (int) EnumMazeObject.Wall &&
-                    maze[r - 1][c + 1] == (int) EnumMazeObject.Wall && maze[r - 1][c] == (int) EnumMazeObject.Wall)
+            if ((r - 1) > 0 && (maze[r - 1][c] == (int)EnumMazeObject.Wall))
+                if (maze[r - 1][c - 1] == (int)EnumMazeObject.Wall && maze[r - 2][c - 1] == (int)EnumMazeObject.Wall &&
+                    maze[r - 2][c] == (int)EnumMazeObject.Wall && maze[r - 2][c + 1] == (int)EnumMazeObject.Wall &&
+                    maze[r - 1][c + 1] == (int)EnumMazeObject.Wall && maze[r - 1][c] == (int)EnumMazeObject.Wall)
                     walls.Add("" + (r - 1) + "," + (c));
 
             //add wall below
-            if ((r + 1) < (height) && (maze[r + 1][c] == (int) EnumMazeObject.Wall))
-                if (maze[r + 1][c + 1] == (int) EnumMazeObject.Wall && maze[r + 2][c + 1] == (int) EnumMazeObject.Wall &&
-                    maze[r + 2][c] == (int) EnumMazeObject.Wall && maze[r + 2][c - 1] == (int) EnumMazeObject.Wall &&
-                    maze[r + 1][c - 1] == (int) EnumMazeObject.Wall && maze[r + 1][c] == (int) EnumMazeObject.Wall)
+            if ((r + 1) < (height) && (maze[r + 1][c] == (int)EnumMazeObject.Wall))
+                if (maze[r + 1][c + 1] == (int)EnumMazeObject.Wall && maze[r + 2][c + 1] == (int)EnumMazeObject.Wall &&
+                    maze[r + 2][c] == (int)EnumMazeObject.Wall && maze[r + 2][c - 1] == (int)EnumMazeObject.Wall &&
+                    maze[r + 1][c - 1] == (int)EnumMazeObject.Wall && maze[r + 1][c] == (int)EnumMazeObject.Wall)
                     walls.Add("" + (r + 1) + "," + (c));
 
             //add wall to left
-            if ((c - 1) > 0 && (maze[r][c - 1] == (int) EnumMazeObject.Wall))
-                if (maze[r + 1][c - 1] == (int) EnumMazeObject.Wall && maze[r + 1][c - 2] == (int) EnumMazeObject.Wall &&
-                    maze[r][c - 2] == (int) EnumMazeObject.Wall && maze[r - 1][c - 2] == (int) EnumMazeObject.Wall &&
-                    maze[r - 1][c - 1] == (int) EnumMazeObject.Wall && maze[r][c - 1] == (int) EnumMazeObject.Wall)
+            if ((c - 1) > 0 && (maze[r][c - 1] == (int)EnumMazeObject.Wall))
+                if (maze[r + 1][c - 1] == (int)EnumMazeObject.Wall && maze[r + 1][c - 2] == (int)EnumMazeObject.Wall &&
+                    maze[r][c - 2] == (int)EnumMazeObject.Wall && maze[r - 1][c - 2] == (int)EnumMazeObject.Wall &&
+                    maze[r - 1][c - 1] == (int)EnumMazeObject.Wall && maze[r][c - 1] == (int)EnumMazeObject.Wall)
                     walls.Add("" + (r) + "," + (c - 1));
 
             //add wall to right
-            if ((c + 1) < (width) && (maze[r][c + 1] == (int) EnumMazeObject.Wall))
-                if (maze[r - 1][c + 1] == (int) EnumMazeObject.Wall && maze[r - 1][c + 2] == (int) EnumMazeObject.Wall &&
-                    maze[r][c + 2] == (int) EnumMazeObject.Wall && maze[r + 1][c + 2] == (int) EnumMazeObject.Wall &&
-                    maze[r + 1][c + 1] == (int) EnumMazeObject.Wall && maze[r][c + 1] == (int) EnumMazeObject.Wall)
+            if ((c + 1) < (width) && (maze[r][c + 1] == (int)EnumMazeObject.Wall))
+                if (maze[r - 1][c + 1] == (int)EnumMazeObject.Wall && maze[r - 1][c + 2] == (int)EnumMazeObject.Wall &&
+                    maze[r][c + 2] == (int)EnumMazeObject.Wall && maze[r + 1][c + 2] == (int)EnumMazeObject.Wall &&
+                    maze[r + 1][c + 1] == (int)EnumMazeObject.Wall && maze[r][c + 1] == (int)EnumMazeObject.Wall)
                     walls.Add("" + (r) + "," + (c + 1));
         }
 
         #endregion
+
+        #region Array To Graph
+
+        private MazeObject arrayToGraph(int[][] maze)
+        {
+            MazeObject head = null;
+
+            head = new MazeObjectWall();
+            MazeObject mainColTracker = head;
+
+            for (int r = 0; r < maze.Length; r++)
+            {
+                MazeObject rowTracker = mainColTracker;
+
+                for (int c = 0; c < maze[0].Length; c++)
+                {
+
+                    if (r < maze.Length - 1)
+                    {
+                        int down = maze[r + 1][c];
+                        if (rowTracker.getSurroundings().GetDown() == null)
+                        {
+                            rowTracker.getSurroundings().setDown(FMazeObjectFactory.GetMazeObject(down));
+                            rowTracker.getSurroundings().GetDown().getSurroundings().setUp(rowTracker);
+
+                            if (c > 0)
+                            {
+                                MazeObject downBelow = rowTracker.getSurroundings().GetDown();
+                                MazeObject downLeft = rowTracker.getSurroundings().GetLeft().getSurroundings().GetDown();
+
+                                downBelow.getSurroundings().setLeft(downLeft);
+                                downLeft.getSurroundings().setRight(downBelow);
+                            }
+                        }
+                    }
+
+
+                    if (c < maze[0].Length - 1)
+                    {
+                        int right = maze[r][c + 1];
+                        if (rowTracker.getSurroundings().GetRight() == null)
+                        {
+                            rowTracker.getSurroundings().setRight(FMazeObjectFactory.GetMazeObject(right));
+                            rowTracker.getSurroundings().GetRight().getSurroundings().setLeft(rowTracker);
+                        }
+                    }
+
+                    rowTracker = rowTracker.getSurroundings().GetRight();
+
+                }//end inner for
+
+                mainColTracker = mainColTracker.getSurroundings().GetDown();
+
+            }//end outter for
+
+
+            //Player.getInstance().setPosition( _head.getSurroundings().getDown().getSurroundings().getRight() );
+
+
+            return head;
+        } //end Generate
+
+        #endregion
+
+        #endregion
+
     }
 }

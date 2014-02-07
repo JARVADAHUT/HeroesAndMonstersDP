@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="MazeTest.DefaultMazeDisplay" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="12" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DefaultMazeDisplay.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MazeTest.DefaultMazeGenerator" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="13.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAEABABA=</HashCode>
+      <FileName>DefaultMazeGenerator.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MazeTest.FMazeObjectFactory" Collapsed="true">
+    <Position X="15.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>FMazeObjectFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MazeTest.LivingCreature" Collapsed="true">
+    <Position X="2.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAKAAQCAgAAAAgIAAAAAAAIACAAAAAAAAIAAAAAAA=</HashCode>
+      <FileName>LivingCreature.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MazeTest.Maze" Collapsed="true">
+    <Position X="12" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAAAAAAAAAAIQAAREAAAAAAIAAAAEAAEAA=</HashCode>
+      <FileName>Maze.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MazeTest.MazeMover" Collapsed="true">
+    <Position X="13.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAEAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>MazeMover.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MazeTest.MazeObject" Collapsed="true">
+    <Position X="5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAEAAAAEAAAAACAAIAAAAAAAAQCAAAAAAAA=</HashCode>
+      <FileName>MazeObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MazeTest.MazeObjectAir" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAIAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>MazeObjectAir.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MazeTest.MazeObjectChest" Collapsed="true">
+    <Position X="5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAIAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MazeObjectChest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MazeTest.MazeObjectExit" Collapsed="true">
+    <Position X="7.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAIAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MazeObjectExit.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MazeTest.MazeObjectWall" Collapsed="true">
+    <Position X="9.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAIAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MazeObjectWall.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MazeTest.Player" Collapsed="true">
+    <Position X="2.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAkAIAAAAAAJAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Player.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MazeTest.Program" Collapsed="true">
+    <Position X="15.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MazeTest.Surroundings" Collapsed="true">
+    <Position X="12" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAIAIgAAAAIAIAAAAAAAQgBAAAAAIAAQAA=</HashCode>
+      <FileName>Surroundings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="MazeTest.IMazeDisplay" Collapsed="true">
+    <Position X="12" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IMazeDisplay.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="MazeTest.IMazeGenerator" Collapsed="true">
+    <Position X="13.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAA=</HashCode>
+      <FileName>IMazeGenerator.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="MazeTest.EnumDirection" Collapsed="true">
+    <Position X="12" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAACACAAAAAAAI=</HashCode>
+      <FileName>Enumerations.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="MazeTest.EnumMazeObject" Collapsed="true">
+    <Position X="13.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAQAQAAQAAAAAAAAAAAAQAIgAAAQAAAAA=</HashCode>
+      <FileName>Enumerations.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

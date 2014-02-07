@@ -24,3 +24,9 @@ N:\HEROSANDMONSTERS AHHHH\THIS IS SPARTA\MazeTest\bin\Debug\MazeTest.pdb
 \\netstorage.eastern.ewu.edu\johnnyb\HEROSANDMONSTERS AHHHH\THIS IS SPARTA\MazeTest\bin\Debug\MazeTest.exe
 \\netstorage.eastern.ewu.edu\johnnyb\HEROSANDMONSTERS AHHHH\THIS IS SPARTA\MazeTest\bin\Debug\MazeTest.pdb
 \\netstorage.eastern.ewu.edu\johnnyb\HEROSANDMONSTERS AHHHH\THIS IS SPARTA\MazeTest\obj\Debug\MazeTest.csprojResolveAssemblyReference.cache
+C:\Users\Bruce\Documents\GitHub\HeroesAndMonstersDP\MazeTest\bin\Debug\MazeTest.exe.config
+C:\Users\Bruce\Documents\GitHub\HeroesAndMonstersDP\MazeTest\obj\Debug\MazeTest.exe
+C:\Users\Bruce\Documents\GitHub\HeroesAndMonstersDP\MazeTest\obj\Debug\MazeTest.pdb
+C:\Users\Bruce\Documents\GitHub\HeroesAndMonstersDP\MazeTest\bin\Debug\MazeTest.exe
+C:\Users\Bruce\Documents\GitHub\HeroesAndMonstersDP\MazeTest\bin\Debug\MazeTest.pdb
+C:\Users\Bruce\Documents\GitHub\HeroesAndMonstersDP\MazeTest\obj\Debug\MazeTest.csprojResolveAssemblyReference.cache

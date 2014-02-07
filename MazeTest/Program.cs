@@ -15,7 +15,7 @@ namespace MazeTest
 
 
             Maze maze = Maze.GetInstance();
-            maze.Generate(10);
+            maze.Generate(4);
 
             maze.Display();
 
