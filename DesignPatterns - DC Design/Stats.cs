@@ -11,24 +11,34 @@ namespace DesignPatterns___DC_Design
 
         Dictionary<PublicEnums.StatsType, int> _stats;
 
+        public Stats(PublicEnums.StatsType[] statsAvailable)
+        {
+            _stats = new Dictionary<PublicEnums.StatsType, int>();
+        }
+
+        public void SetStat(PublicEnums.StatsType stat, int magnitude)
+        {
+            magnitude = ValidateStat(stat, magnitude);
+            _stats[stat] = magnitude;
+        }
 
         public void ApplyAugment(PublicEnums.StatsType stat, int magnitude)
         {
-            int moddingStat = _stats[stat];
+            var moddingStat = _stats[stat];
             moddingStat += magnitude;
-            moddingStat = validateStat(stat, moddingStat);
+            moddingStat = ValidateStat(stat, moddingStat);
             _stats[stat] = moddingStat;
         }
 
         public void RemoveAugment(PublicEnums.StatsType stat, int magnitude)
         {
-            int moddingStat = _stats[stat];
+            var moddingStat = _stats[stat];
             moddingStat -= magnitude;
-            moddingStat = validateStat(stat, moddingStat);
+            moddingStat = ValidateStat(stat, moddingStat);
             _stats[stat] = moddingStat;
         }
 
-        private int validateStat(PublicEnums.StatsType stat, int magnitude)
+        private int ValidateStat(PublicEnums.StatsType stat, int magnitude)
         {
             switch (stat)
             {
