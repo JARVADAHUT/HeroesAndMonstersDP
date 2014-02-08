@@ -28,5 +28,8 @@ namespace DesignPatterns___DC_Design
         }
 
         public IGear GetGear()
+        {
+            return null; //stub
+        }
     }
 }
