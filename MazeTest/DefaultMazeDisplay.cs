@@ -13,37 +13,58 @@ namespace MazeTest
 
         }
 
-        public void display(MazeObject head)
+        public void Display(MazeObject head)
         {
+            Console.Clear();
+            MazeObject displayCol = head;
 
-            MazeObject temp = head;
-            int count = 0;
-            while(temp.getSurroundings().getDown() != null)//for (int x = 0; x < maze.Length; x++)
+            while(displayCol != null)//for (int x = 0; x < maze.Length; x++)
             {
-                
-                int goDown = 0;
-
-                while(goDown < count)
+  
+                MazeObject displayRow = displayCol;
+                while (displayRow != null)
                 {
-                    temp = temp.getSurroundings().getDown();
-                    goDown++;
+                    Console.Write(displayRow);
+
+                    displayRow = displayRow.getSurroundings().GetRight();
                 }
 
-                if (temp == null)
-                    break;
-
-                while(temp != null)
-                {
-                    Console.Write(temp);
-
-                    temp = temp.getSurroundings().getRight();
-                }
-
-                temp = head;
+                displayCol = displayCol.getSurroundings().GetDown();
                 Console.WriteLine();
-                count++;
             }
         }
+
+        //public void DebugDisplay(MazeObject head)
+        //{
+        //    //Console.Clear();
+        //    MazeObject displayCol = head;
+
+        //    bool hadNull = false;
+
+        //    while (displayCol != null)//for (int x = 0; x < maze.Length; x++)
+        //    {
+
+        //        MazeObject displayRow = displayCol;
+        //        while (displayRow != null)
+        //        {
+        //            if (displayRow.getSurroundings().IsDownNull() && displayRow.ToString().Equals("a"))
+        //            {
+        //                Console.Write("x");
+        //                hadNull = true;
+        //            }
+        //            else
+        //                Console.Write(displayRow);
+
+        //            displayRow = displayRow.getSurroundings().GetRight();
+        //        }
+
+        //        displayCol = displayCol.getSurroundings().GetDown();
+        //        Console.WriteLine();
+        //    }
+
+        //    if(hadNull)
+        //        Console.WriteLine("There was a null down reference");
+        //}
 
     }
 }

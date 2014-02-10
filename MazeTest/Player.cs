@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DesignPatterns___DC_Design;
 
 namespace MazeTest
 {
@@ -13,15 +14,15 @@ namespace MazeTest
 
         private Player()
         {
-
+            //this.dc = new Hero();
         }
 
-        public static Player getInstance()
+        public static Player GetInstance()
         {
             return _thisPlayer ?? (_thisPlayer = new Player());
         }
 
-        public override void die()
+        public override void Die()
         {
 
         }
@@ -31,10 +32,12 @@ namespace MazeTest
             return "p";
         }
 
-        public override void interact(LivingCreature l)
+        public override void Interact(LivingCreature l)
         {
-
+            
         }
+
+        
 
     }
 }

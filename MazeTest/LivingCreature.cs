@@ -3,57 +3,62 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DesignPatterns___DC_Design;
 
 namespace MazeTest
 {
     abstract class LivingCreature : MazeObject
     {
-        protected int _hitPoints;
-        protected int _resourcePoints;
+        //protected DungeonCharacter dc;
         protected string _name;
         private EnumDirection _lastMoveDirection;
 
-        abstract public void die();
+        abstract public void Die();
 
-        public override void interact(EnumDirection dir)
+        public void Interact(EnumDirection dir)
         {
-            this.setLastMove(dir);
+            this.SetLastMove(dir);
 
-            MazeObject interaction = getInteractionObject(dir);
+            MazeObject interaction = GetInteractionObject(dir);
 
-            interaction.interact(this);
+            interaction.Interact(this);
         }
 
-        public void setLastMove(EnumDirection dir)
+        public void SetLastMove(EnumDirection dir)
         {
             _lastMoveDirection = dir;
         }
 
-        public EnumDirection getLastMove()
+        public EnumDirection GetLastMove()
         {
             return _lastMoveDirection;
         }
 
         //could this go somewhere else? -- where?
-        private MazeObject getInteractionObject(EnumDirection dir)
+        private MazeObject GetInteractionObject(EnumDirection dir)
         {
             switch (dir)
             {
                 case EnumDirection.Up:
-                    return _surroundings.getUp();
+                    return _surroundings.GetUp();
 
                 case EnumDirection.Down:
-                    return _surroundings.getDown();
+                    return _surroundings.GetDown();
 
                 case EnumDirection.Left:
-                    return _surroundings.getLeft();
+                    return _surroundings.GetLeft();
 
                 case EnumDirection.Right:
-                    return _surroundings.getRight();
+                    return _surroundings.GetRight();
 
                 default:
                     throw new FieldAccessException();
             }
+        }
+
+        public void ResetPosition()
+        {
+            _surroundings = new Surroundings();
         }
 
     }

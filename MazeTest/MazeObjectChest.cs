@@ -18,7 +18,7 @@ namespace MazeTest
             return "c";
         }
 
-        public override void interact(LivingCreature creature)
+        public override void Interact(LivingCreature creature)
         {
 
         }

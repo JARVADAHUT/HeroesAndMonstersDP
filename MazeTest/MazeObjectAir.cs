@@ -13,17 +13,22 @@ namespace MazeTest
 
         }
 
-        public override void interact(LivingCreature creature)
+        public override void Interact(LivingCreature creature)
         {
-            EnumDirection interactDirection = creature.getLastMove();
+            EnumDirection interactDirection = creature.GetLastMove();
 
-            int flipDirection = -1 * (int)interactDirection;
+            interactDirection = FlipDirection(interactDirection);
 
-            interactDirection = (EnumDirection)flipDirection;
-
-            MazeMover.move(interactDirection, this);
+            MazeMover.Move(interactDirection, this);
         }
 
+
+        private EnumDirection FlipDirection(EnumDirection curDir)
+        {
+            int flipDirection = -1 * (int)curDir;
+
+            return (EnumDirection)flipDirection;
+        }
 
 
         public override string ToString()

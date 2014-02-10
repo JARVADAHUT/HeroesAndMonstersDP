@@ -12,42 +12,50 @@ namespace MazeTest
         //singleton object
         private static Maze _thisMaze = null;
 
+        private static readonly int _sizeIncreasePerMaze = 10;
+
         private IMazeDisplay _displayer;
         private MazeObject _theMaze;
         private IMazeGenerator _mazeGen;
+        private int _lastSize;
+
 
 
         private Maze()
         {
+            _displayer = new DefaultMazeDisplay();
+            _mazeGen = new DefaultMazeGenerator();
 
         }
 
-        public static Maze getInstance()
+        public static Maze GetInstance()
         {
             return _thisMaze ?? (_thisMaze = new Maze());
         }
 
-        public void Exit()
-        {
-            _thisMaze = null;
-        }
-
         public void Display()
         {
-            _displayer.display(_theMaze);
+            _displayer.Display(_theMaze);
         }
 
-        public void generate(int size)
+        public void GenerateNext()
         {
-            _theMaze = _mazeGen.generate(size);
+            _lastSize += _sizeIncreasePerMaze;
+            _theMaze = _mazeGen.Generate(_lastSize);
         }
 
-        public void setGenerator(IMazeGenerator mazeGen)
+        public void Generate(int size)
+        {
+            _theMaze = _mazeGen.Generate(size);
+            _lastSize = size;
+        }
+
+        public void SetGenerator(IMazeGenerator mazeGen)
         {
             _mazeGen = mazeGen;
         }
 
-        public void setDiplayer(IMazeDisplay mazeDesp)
+        public void SetDiplayer(IMazeDisplay mazeDesp)
         {
             _displayer = mazeDesp;
         }

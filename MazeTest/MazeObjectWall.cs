@@ -13,7 +13,7 @@ namespace MazeTest
 
         }
 
-        public override void interact(LivingCreature creature)
+        public override void Interact(LivingCreature creature)
         {
             //do nothing, you are a wall
         }
