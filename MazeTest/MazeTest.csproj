@@ -44,6 +44,7 @@
     <Compile Include="Enumerations.cs" />
     <Compile Include="DefaultMazeDisplay.cs" />
     <Compile Include="DefaultMazeGenerator.cs" />
+    <Compile Include="IInteractionType.cs" />
     <Compile Include="MazeMover.cs" />
     <Compile Include="MazeObjectChest.cs" />
     <Compile Include="MazeObjectExit.cs" />
@@ -65,12 +66,6 @@
     <None Include="ClassDiagram1.cd" />
     <None Include="ClassDiagram2.cd" />
     <None Include="ClassDiagram3.cd" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\DesignPatterns - DC Design\HeroesAndMonstersDP.csproj">
-      <Project>{609e450e-b013-46cf-98c6-debad7b648a8}</Project>
-      <Name>HeroesAndMonstersDP</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

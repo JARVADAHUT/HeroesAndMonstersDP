@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DesignPatterns___DC_Design;
+//using DesignPatterns___DC_Design;
 
 namespace MazeTest
 {
@@ -12,7 +12,7 @@ namespace MazeTest
         private static Player _thisPlayer = null;
         //singleton
 
-        private Player()
+        private Player() : base(_thisPlayer)
         {
             //this.dc = new Hero();
         }
@@ -37,7 +37,27 @@ namespace MazeTest
             
         }
 
-        
 
+        public override void Exit()
+        {
+            Maze maze = Maze.GetInstance();
+            this.ResetPosition();
+            maze.GenerateNext();
+        }
+
+        public override void Move()
+        {
+            MazeMover.Move(this.GetLastMove(), this);
+        }
+
+        private void ResetPosition()
+        {
+            _surroundings = new Surroundings();
+        }
+
+        public override EnumMazeObject GetInteractionType()
+        {
+            return EnumMazeObject.Player;
+        }
     }
 }

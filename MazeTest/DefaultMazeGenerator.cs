@@ -12,7 +12,7 @@ namespace MazeTest
 
         }
 
-        private const int _minSize = 4;
+        private const int _minSize = 8;
 
         #region MazeGeration
 
@@ -228,7 +228,8 @@ namespace MazeTest
         {
             MazeObject head = null;
 
-            head = new MazeObjectWall();
+            head = FMazeObjectFactory.GetMazeObject(EnumMazeObject.Wall);
+
             MazeObject mainColTracker = head;
 
             for (int r = 0; r < maze.Length; r++)
@@ -243,7 +244,7 @@ namespace MazeTest
                         int down = maze[r + 1][c];
                         if (rowTracker.getSurroundings().GetDown() == null)
                         {
-                            rowTracker.getSurroundings().setDown(FMazeObjectFactory.GetMazeObject(down));
+                            rowTracker.getSurroundings().setDown(FMazeObjectFactory.GetMazeObject( (EnumMazeObject) down ));
                             rowTracker.getSurroundings().GetDown().getSurroundings().setUp(rowTracker);
 
                             if (c > 0)
@@ -263,7 +264,7 @@ namespace MazeTest
                         int right = maze[r][c + 1];
                         if (rowTracker.getSurroundings().GetRight() == null)
                         {
-                            rowTracker.getSurroundings().setRight(FMazeObjectFactory.GetMazeObject(right));
+                            rowTracker.getSurroundings().setRight(FMazeObjectFactory.GetMazeObject( (EnumMazeObject) right) );
                             rowTracker.getSurroundings().GetRight().getSurroundings().setLeft(rowTracker);
                         }
                     }

@@ -6,34 +6,26 @@ using System.Threading.Tasks;
 
 namespace MazeTest
 {
-    class MazeObjectAir : MazeObject
+    class MazeObjectAir : IInteractionType
     {
-        public MazeObjectAir() : base()
+        public MazeObjectAir()
         {
 
         }
 
-        public override void Interact(LivingCreature creature)
+        public void Interact(LivingCreature creature)
         {
-            EnumDirection interactDirection = creature.GetLastMove();
-
-            interactDirection = FlipDirection(interactDirection);
-
-            MazeMover.Move(interactDirection, this);
+            creature.Move();
         }
-
-
-        private EnumDirection FlipDirection(EnumDirection curDir)
-        {
-            int flipDirection = -1 * (int)curDir;
-
-            return (EnumDirection)flipDirection;
-        }
-
 
         public override string ToString()
         {
             return "a";
+        }
+
+        public EnumMazeObject GetInteractionType()
+        {
+            return EnumMazeObject.Air;
         }
     }
 }

@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace MazeTest
 {
-    class MazeObjectWall : MazeObject
+    class MazeObjectWall : IInteractionType
     {
-        public MazeObjectWall() : base()
+        public MazeObjectWall()
         {
 
         }
 
-        public override void Interact(LivingCreature creature)
+        public void Interact(LivingCreature creature)
         {
             //do nothing, you are a wall
         }
@@ -21,6 +21,11 @@ namespace MazeTest
         public override string ToString()
         {
             return "w";
+        }
+
+        public EnumMazeObject GetInteractionType()
+        {
+            return EnumMazeObject.Wall;
         }
     }
 }

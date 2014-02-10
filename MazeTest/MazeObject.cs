@@ -6,27 +6,23 @@ using System.Threading.Tasks;
 
 namespace MazeTest
 {
-
-
-
-    abstract class MazeObject
+    class MazeObject : IInteractionType
     {
         protected Surroundings _surroundings;
         private bool _discovered;
+        private IInteractionType _interaction;
 
-
-        protected MazeObject()
+        public MazeObject(IInteractionType i)
         {
             _surroundings = new Surroundings();
             _discovered = false;
+            _interaction = i;
         }
 
-
-        // player interaction with the maze is movement? (if it is an air block)
-        
-        abstract public override string ToString();
-        //abstract public bool interact();
-        //abstract public bool interact(Direction d);
+        public void Interact(LivingCreature creature)
+        {
+            _interaction.Interact(creature);
+        }
 
         public void SetDiscovered(bool b)
         {
@@ -38,12 +34,19 @@ namespace MazeTest
             return _discovered;
         }
 
-        public abstract void Interact(LivingCreature creature);
-
         public Surroundings getSurroundings()
         {
             return _surroundings;
         }
-        
+
+        public override string ToString()
+        {
+            return _interaction.ToString();
+        }
+
+        public EnumMazeObject GetInteractionType()
+        {
+            return _interaction.GetInteractionType();
+        }
     }
 }

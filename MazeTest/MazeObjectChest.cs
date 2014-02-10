@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace MazeTest
 {
-    class MazeObjectChest : MazeObject
+    class MazeObjectChest : IInteractionType
     {
-        public MazeObjectChest() : base()
+        public MazeObjectChest()
         {
 
         }
@@ -18,9 +18,14 @@ namespace MazeTest
             return "c";
         }
 
-        public override void Interact(LivingCreature creature)
+        public void Interact(LivingCreature creature)
         {
 
+        }
+
+        public EnumMazeObject GetInteractionType()
+        {
+            return EnumMazeObject.Chest;
         }
     }
 }

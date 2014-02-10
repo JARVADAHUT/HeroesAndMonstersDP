@@ -8,18 +8,18 @@ namespace MazeTest
 {
     class FMazeObjectFactory
     {
-        public static MazeObject GetMazeObject(int s)
+        public static MazeObject GetMazeObject(EnumMazeObject s)
         {
             switch ((EnumMazeObject)s)
             {
                 case EnumMazeObject.Air:
-                    return new MazeObjectAir();
+                    return new MazeObject( new MazeObjectAir() );
 
                 case EnumMazeObject.Chest:
-                    return new MazeObjectChest();
+                    return new MazeObject( new MazeObjectChest() );
 
                 case EnumMazeObject.Exit:
-                    return new MazeObjectExit();
+                    return new MazeObject( new MazeObjectExit() );
 
                 case EnumMazeObject.Player:
                     return Player.GetInstance();
@@ -28,7 +28,7 @@ namespace MazeTest
                     return null;
 
                 default:
-                    return new MazeObjectWall();
+                    return new MazeObject(new MazeObjectWall());
 
             }
 

@@ -3,24 +3,39 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DesignPatterns___DC_Design;
+//using DesignPatterns___DC_Design;
 
 namespace MazeTest
 {
-    abstract class LivingCreature : MazeObject
+    abstract class LivingCreature : MazeObject, IInteractionType
     {
         //protected DungeonCharacter dc;
+<<<<<<< HEAD
+=======
         protected string _name;
+>>>>>>> ba13352ac059212eab6f1873e8010413419c07ba
         private EnumDirection _lastMoveDirection;
 
-        abstract public void Die();
+
+        protected LivingCreature(IInteractionType i) : base(i)
+        {
+
+        }
+
+        public abstract void Die();
+
+        public abstract void Exit();
+        public abstract void Move();
+
+        public new abstract EnumMazeObject GetInteractionType();
+        public new abstract void Interact(LivingCreature lc);
+        public abstract override string ToString();
+
 
         public void Interact(EnumDirection dir)
         {
             this.SetLastMove(dir);
-
             MazeObject interaction = GetInteractionObject(dir);
-
             interaction.Interact(this);
         }
 
@@ -54,11 +69,6 @@ namespace MazeTest
                 default:
                     throw new FieldAccessException();
             }
-        }
-
-        public void ResetPosition()
-        {
-            _surroundings = new Surroundings();
         }
 
     }
