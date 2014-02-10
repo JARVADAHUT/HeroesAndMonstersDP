@@ -49,6 +49,7 @@
     <Compile Include="IPotion.cs" />
     <Compile Include="PublicEnums.cs" />
     <Compile Include="StatAugmentCommand.cs" />
+    <Compile Include="StatAugmentManager.cs" />
     <Compile Include="Stats.cs" />
     <Compile Include="ICombatAction.cs" />
     <Compile Include="IGear.cs" />
