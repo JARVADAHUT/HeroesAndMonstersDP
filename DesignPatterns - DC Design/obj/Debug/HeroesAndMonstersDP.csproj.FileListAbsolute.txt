@@ -1,1 +1,2 @@
 N:\GitStuff\OtherFolder\DesignPatterns - DC Design\bin\Debug\DesignPatterns - DC Design.exe.config
+\\netstorage.eastern.ewu.edu\amccall\GitStuff\HeroesAndMonstersDP\DesignPatterns - DC Design\obj\Debug\HeroesAndMonstersDP.csprojResolveAssemblyReference.cache

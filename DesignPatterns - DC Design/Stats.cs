@@ -4,30 +4,67 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace DesignPatterns___DC_Design
 {
-    class Stats
+    public class Stats
     {
+
 
         Dictionary<PublicEnums.StatsType, int> _stats;
 
-        public void augmentStat(StatAugmentCommand augment)
+
+
+
+        public void ApplyAugment(PublicEnums.StatsType stat, int magnitude)
         {
-            if (Validate(augment))
+            lock (this)
             {
-                PublicEnums.StatsType statForAugment = augment.Stat;
-                var statValue = _stats[statForAugment];
-                _stats[statForAugment] = augment.ApplyAugment(statValue);
+                int moddingStat = _stats[stat];
+                moddingStat += magnitude;
+                moddingStat = ValidateStat(stat, moddingStat);
+                _stats[stat] = moddingStat;
             }
         }
 
-        private bool Validate(StatAugmentCommand augment)
+
+        public void RemoveAugment(PublicEnums.StatsType stat, int magnitude)
         {
-            return _stats.ContainsKey(augment.Stat);
+            lock (this)
+            {
+                int moddingStat = _stats[stat];
+                moddingStat -= magnitude;
+                moddingStat = ValidateStat(stat, moddingStat);
+                _stats[stat] = moddingStat;
+            }
+        }
+
+
+        private int ValidateStat(PublicEnums.StatsType stat, int magnitude)
+        {
+            switch (stat)
+            {
+                case (PublicEnums.StatsType.CurHp):
+                    if (magnitude > _stats[PublicEnums.StatsType.MaxHp])
+                    {
+                        magnitude = _stats[PublicEnums.StatsType.MaxHp];
+                    }
+                    break;
+                case (PublicEnums.StatsType.CurResources):
+                    if (magnitude > _stats[PublicEnums.StatsType.MaxResources])
+                    {
+                        magnitude = _stats[PublicEnums.StatsType.MaxResources];
+                    }
+                    break;
+            }
+            if (magnitude < 0)
+                magnitude = 0;
+            return magnitude;
         }
         /*
         int _maxHP, _curHp;
         int _strength, _agility, _defense, _intelegence;
+
 
         public int MaxHP { set { _maxHP=value < 0 ? 0 : value; } get { return _maxHP; } }
         public int CurHP { 
@@ -46,9 +83,11 @@ namespace DesignPatterns___DC_Design
         public int Def { set { _defense = value < 0 ? 0 : value; } get { return _defense; } }
         public int Int { set { _intelegence = value < 0 ? 0 : value; } get { return _intelegence; } }
 
+
         public void AugmentCurHP(int augment)
         {
             this.CurHP += augment;
+
 
             if (this.CurHP < 0)
                 this.CurHP = 0;
@@ -56,41 +95,51 @@ namespace DesignPatterns___DC_Design
                 this.CurHP = this.MaxHP;
         }
 
+
         public void AugmentMaxHP(int augment)
         {
             this.MaxHP += augment;
+
 
             if (this.MaxHP < 0)
                 this.MaxHP = 0;
         }
 
+
         public void AugmentStr(int augment)
         {
             this.Str += augment;
+
 
             if (this.Str < 0)
                 this.Str = 0;
         }
 
+
         public void AugmentDef(int augment)
         {
             this.Def += augment;
+
 
             if (this.Def < 0)
                 this.Def = 0;
         }
 
+
         public void AugmentInt(int augment)
         {
             this.Int += augment;
+
 
             if (this.Int < 0)
                 this.Int = 0;
         }
 
+
         public void AugmentAgl(int augment)
         {
             this.Agl += augment;
+
 
             if (this.Agl < 0)
                 this.Agl = 0;
@@ -99,3 +148,4 @@ namespace DesignPatterns___DC_Design
          */
     }
 }
+
