@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
+﻿using System.Threading;
 
 namespace DesignPatterns___DC_Design
 {
@@ -27,23 +22,23 @@ namespace DesignPatterns___DC_Design
 
         public void ReceiveCommand(StatAugmentCommand cmd)
         {
-            StatAugmentCommandThread sacThread = new StatAugmentCommandThread(cmd);
+            var sacThread = new StatAugmentCommandThread(cmd);
 
-            Thread t = new Thread(new ThreadStart(sacThread.threadStart));
+            var t = new Thread(new ThreadStart(sacThread.ThreadStart));
             t.Start();
         }
 
 
         private class StatAugmentCommandThread
         {
-            private StatAugmentCommand _cmd;
+            private readonly StatAugmentCommand _cmd;
 
             public StatAugmentCommandThread(StatAugmentCommand cmd)
             {
-                this._cmd = cmd;
+                _cmd = cmd;
             }
 
-            public void threadStart()
+            public void ThreadStart()
             {
                 int delay = _cmd.Delay;
                 int duration = _cmd.Duration;

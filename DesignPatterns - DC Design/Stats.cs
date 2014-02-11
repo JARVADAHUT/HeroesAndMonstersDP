@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 
 namespace DesignPatterns___DC_Design
@@ -15,9 +12,14 @@ namespace DesignPatterns___DC_Design
 
         public Stats()
         {
-            this._stats = new Dictionary<PublicEnums.StatsType, int>();
+            _stats = new Dictionary<PublicEnums.StatsType, int>();
         }
 
+        public Stats(Dictionary<PublicEnums.StatsType, int> stats)
+        {
+            if (stats == null) throw new ArgumentNullException("stats");
+            _stats = stats;
+        }
 
         public void ApplyAugment(PublicEnums.StatsType stat, int magnitude)
         {
