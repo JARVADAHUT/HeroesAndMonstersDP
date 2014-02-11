@@ -13,7 +13,10 @@ namespace DesignPatterns___DC_Design
 
         Dictionary<PublicEnums.StatsType, int> _stats;
 
-
+        public Stats()
+        {
+            this._stats = new Dictionary<PublicEnums.StatsType, int>();
+        }
 
 
         public void ApplyAugment(PublicEnums.StatsType stat, int magnitude)

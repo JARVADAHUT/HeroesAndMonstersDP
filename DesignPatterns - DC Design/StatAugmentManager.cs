@@ -30,6 +30,7 @@ namespace DesignPatterns___DC_Design
             StatAugmentCommandThread sacThread = new StatAugmentCommandThread(cmd);
 
             Thread t = new Thread(new ThreadStart(sacThread.threadStart));
+            t.Start();
         }
 
 
