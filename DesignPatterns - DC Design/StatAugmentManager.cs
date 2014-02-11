@@ -24,24 +24,25 @@ namespace DesignPatterns___DC_Design
         {
             var sacThread = new StatAugmentCommandThread(cmd);
 
-            var t = new Thread(new ThreadStart(sacThread.ThreadStart));
-            t.Start();
+            ThreadPool.QueueUserWorkItem(sacThread.ThreadStart);
+            //var t = new Thread(new ThreadStart(sacThread.ThreadStart));
+            //t.Start();
         }
 
 
         private class StatAugmentCommandThread
         {
-            private readonly StatAugmentCommand _cmd;
+            private StatAugmentCommand _cmd;
 
             public StatAugmentCommandThread(StatAugmentCommand cmd)
             {
                 _cmd = cmd;
             }
 
-            public void ThreadStart()
+            internal void ThreadStart(object state)
             {
-                int delay = _cmd.Delay;
-                int duration = _cmd.Duration;
+                var delay = _cmd.Delay;
+                var duration = _cmd.Duration;
 
                 Thread.Sleep(delay * 1000);
                 _cmd.ApplyAugment();

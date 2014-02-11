@@ -5,9 +5,14 @@ namespace DesignPatterns___DC_Design
 {
     abstract class DungeonCharacter
     {
+        private Stats _dcStats;
         CharacterGearSet _gearInfo;
         public string Name { get; set; }
-        public Stats DCStats { get; }
+
+        public Stats DCStats
+        {
+            get { return _dcStats; } 
+        }
 
         List<ICombatAction> _combatActions;
         Inventory inventory;

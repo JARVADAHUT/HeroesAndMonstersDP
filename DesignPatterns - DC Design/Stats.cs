@@ -66,6 +66,19 @@ namespace DesignPatterns___DC_Design
                 magnitude = 0;
             return magnitude;
         }
+
+        public override string ToString()
+        {
+            string result = "";
+
+            foreach (var s in _stats.Keys)
+            {
+                result += s + ":  " + _stats[s] + "\n";
+            }
+
+            return result;
+        }
+
         /*
         int _maxHP, _curHp;
         int _strength, _agility, _defense, _intelegence;

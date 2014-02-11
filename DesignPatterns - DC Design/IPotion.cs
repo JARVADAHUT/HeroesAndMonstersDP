@@ -2,6 +2,6 @@
 {
     interface IPotion : IInventoryItem
     {
-        public void UsePotion(Target target);
+        void UsePotion(Target target);
     }
 }

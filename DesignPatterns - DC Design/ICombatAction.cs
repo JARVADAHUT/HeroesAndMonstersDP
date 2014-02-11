@@ -2,7 +2,7 @@
 {
     interface ICombatAction
     {
-        public abstract void performAction(Target target);
-        public abstract int getResourceUse();
+        void performAction(Target target);
+        int getResourceUse();
     }
 }

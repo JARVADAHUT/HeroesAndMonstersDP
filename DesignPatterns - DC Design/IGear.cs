@@ -4,5 +4,10 @@
     {
 
         StatAugmentCommand _statAugment;
+
+        public void UseItem(Target target)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
