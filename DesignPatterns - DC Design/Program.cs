@@ -9,12 +9,13 @@ namespace DesignPatterns___DC_Design
         private static void Main(string[] args)
         {
             var augmentMgr = StatAugmentManager.GetInstance();
-            var statDictionary = new Dictionary<PublicEnums.StatsType, int>();
-
-            statDictionary.Add(PublicEnums.StatsType.Agility, 20);
-            statDictionary.Add(PublicEnums.StatsType.Defense, 20);
-            statDictionary.Add(PublicEnums.StatsType.Intelegence, 20);
-            statDictionary.Add(PublicEnums.StatsType.Strength, 20);
+            var statDictionary = new Dictionary<PublicEnums.StatsType, int>
+            {
+                {PublicEnums.StatsType.Agility, 20},
+                {PublicEnums.StatsType.Defense, 20},
+                {PublicEnums.StatsType.Intelegence, 20},
+                {PublicEnums.StatsType.Strength, 20}
+            };
 
             var stats = new Stats(statDictionary);
 

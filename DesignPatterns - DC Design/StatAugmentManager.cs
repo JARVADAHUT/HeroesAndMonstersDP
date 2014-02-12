@@ -22,6 +22,7 @@ namespace DesignPatterns___DC_Design
 
         public void ReceiveCommand(StatAugmentCommand cmd)
         {
+
             var sacThread = new StatAugmentCommandThread(cmd);
 
             ThreadPool.QueueUserWorkItem(sacThread.ThreadStart);
@@ -46,8 +47,11 @@ namespace DesignPatterns___DC_Design
 
                 Thread.Sleep(delay * 1000);
                 _cmd.ApplyAugment();
-                Thread.Sleep(duration * 1000);
-                _cmd.RemoveAugment();
+                if (duration > 0)
+                {
+                    Thread.Sleep(duration*1000);
+                    _cmd.RemoveAugment();
+                }
             }
 
         }
