@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 
 namespace DesignPatterns___DC_Design
@@ -73,14 +74,7 @@ namespace DesignPatterns___DC_Design
 
         public override string ToString()
         {
-            string result = "";
-
-            foreach (var s in _stats.Keys)
-            {
-                result += s + ":  " + _stats[s] + "\n";
-            }
-
-            return result;
+            return _stats.Keys.Aggregate("", (current, s) => current + (s + ":  " + _stats[s] + "\n"));
         }
 
         /*

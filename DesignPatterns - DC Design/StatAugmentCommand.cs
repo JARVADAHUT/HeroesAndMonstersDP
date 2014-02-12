@@ -37,7 +37,7 @@ namespace DesignPatterns___DC_Design
             var result = true;
 
             result = stats.HasStat(statsForMod);
-            result = magnitude >= 0 && delay >= 0 && duration >= 0;
+            result = delay >= 0 && duration >= 0;
 
             return result;
         }

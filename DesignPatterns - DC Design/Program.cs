@@ -21,12 +21,18 @@ namespace DesignPatterns___DC_Design
 
             Console.WriteLine(stats);
 
-            StatAugmentCommand augment = new StatAugmentCommand(PublicEnums.StatsType.Agility,stats,-5,0,2);
+            StatAugmentCommand augment = new StatAugmentCommand(PublicEnums.StatsType.Agility,stats,-5,2,2);
             augmentMgr.ReceiveCommand(augment);
+            StatAugmentCommand augment1 = new StatAugmentCommand(PublicEnums.StatsType.Strength, stats, -5, 3, 2);
+            augmentMgr.ReceiveCommand(augment1);
+            StatAugmentCommand augment2 = new StatAugmentCommand(PublicEnums.StatsType.Defense, stats, -5, 3, 2);
+            augmentMgr.ReceiveCommand(augment2);
+            StatAugmentCommand augment3 = new StatAugmentCommand(PublicEnums.StatsType.Intelegence, stats, -5, 2, 2);
+            augmentMgr.ReceiveCommand(augment3);
 
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < 100; i++)
             {
-                Thread.Sleep(1000);
+                Thread.Sleep(100);
                 Console.WriteLine(stats);
             }
 

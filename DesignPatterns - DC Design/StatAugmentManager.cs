@@ -13,11 +13,7 @@ namespace DesignPatterns___DC_Design
 
         public static StatAugmentManager GetInstance()
         {
-            if (_instanceStatAugmentManager == null)
-            {
-                _instanceStatAugmentManager = new StatAugmentManager();
-            }
-            return _instanceStatAugmentManager;
+            return _instanceStatAugmentManager ?? (_instanceStatAugmentManager = new StatAugmentManager());
         }
 
         public void ReceiveCommand(StatAugmentCommand cmd)
@@ -47,11 +43,11 @@ namespace DesignPatterns___DC_Design
 
                 Thread.Sleep(delay * 1000);
                 _cmd.ApplyAugment();
-                if (duration > 0)
-                {
-                    Thread.Sleep(duration*1000);
-                    _cmd.RemoveAugment();
-                }
+
+                if (duration <= 0) return;
+                
+                Thread.Sleep(duration*1000);
+                _cmd.RemoveAugment();
             }
 
         }
