@@ -10,10 +10,9 @@ namespace MazeTest
     abstract class LivingCreature : MazeObject, IInteractionType
     {
         //protected DungeonCharacter dc;
-<<<<<<< HEAD
-=======
+
         protected string _name;
->>>>>>> ba13352ac059212eab6f1873e8010413419c07ba
+
         private EnumDirection _lastMoveDirection;
 
 
@@ -25,7 +24,6 @@ namespace MazeTest
         public abstract void Die();
 
         public abstract void Exit();
-        public abstract void Move();
 
         public new abstract EnumMazeObject GetInteractionType();
         public new abstract void Interact(LivingCreature lc);
@@ -69,6 +67,17 @@ namespace MazeTest
                 default:
                     throw new FieldAccessException();
             }
+        }
+
+        public void Move()
+        {
+            MazeMover.Move(this.GetLastMove(), this);
+            hook();
+        }
+
+        public void hook()
+        {
+            
         }
 
     }

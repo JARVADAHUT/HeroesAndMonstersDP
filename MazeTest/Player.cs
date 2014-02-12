@@ -45,11 +45,6 @@ namespace MazeTest
             maze.GenerateNext();
         }
 
-        public override void Move()
-        {
-            MazeMover.Move(this.GetLastMove(), this);
-        }
-
         private void ResetPosition()
         {
             _surroundings = new Surroundings();

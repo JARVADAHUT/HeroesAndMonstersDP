@@ -41,6 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HiveMind.cs" />
+    <Compile Include="Monster.cs" />
     <Compile Include="Enumerations.cs" />
     <Compile Include="DefaultMazeDisplay.cs" />
     <Compile Include="DefaultMazeGenerator.cs" />

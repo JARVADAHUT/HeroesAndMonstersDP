@@ -25,7 +25,7 @@ namespace MazeTest
                     return Player.GetInstance();
 
                 case EnumMazeObject.Monster:
-                    return null;
+                    return new Monster();
 
                 default:
                     return new MazeObject(new MazeObjectWall());

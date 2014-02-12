@@ -37,3 +37,9 @@ C:\Users\mcandertoad\Documents\GitHub\HeroesAndMonstersDP\MazeTest\obj\Debug\Maz
 \\netstorage.eastern.ewu.edu\amccall\GitStuff\HeroesAndMonstersDP\MazeTest\obj\Debug\MazeTest.exe
 \\netstorage.eastern.ewu.edu\amccall\GitStuff\HeroesAndMonstersDP\MazeTest\obj\Debug\MazeTest.pdb
 \\netstorage.eastern.ewu.edu\amccall\GitStuff\HeroesAndMonstersDP\MazeTest\obj\Debug\MazeTest.csprojResolveAssemblyReference.cache
+C:\Users\Ryan\Documents\GitHub\HeroesAndMonstersDP\MazeTest\bin\Debug\MazeTest.exe.config
+C:\Users\Ryan\Documents\GitHub\HeroesAndMonstersDP\MazeTest\obj\Debug\MazeTest.exe
+C:\Users\Ryan\Documents\GitHub\HeroesAndMonstersDP\MazeTest\obj\Debug\MazeTest.pdb
+C:\Users\Ryan\Documents\GitHub\HeroesAndMonstersDP\MazeTest\obj\Debug\MazeTest.csprojResolveAssemblyReference.cache
+C:\Users\Ryan\Documents\GitHub\HeroesAndMonstersDP\MazeTest\bin\Debug\MazeTest.exe
+C:\Users\Ryan\Documents\GitHub\HeroesAndMonstersDP\MazeTest\bin\Debug\MazeTest.pdb

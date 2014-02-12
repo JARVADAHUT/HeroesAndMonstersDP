@@ -8,10 +8,10 @@ namespace MazeTest
 {
     public enum EnumDirection
     {
-        Up = 3,
-        Down = -3,
+        Up = 0,
+        Down = 1,
         Left = 2,
-        Right = -2
+        Right = 3
     }
 
     public enum EnumMazeObject

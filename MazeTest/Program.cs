@@ -13,6 +13,7 @@ namespace MazeTest
         {
             Player p = Player.GetInstance();
 
+            HiveMind h = HiveMind.GetInstance();
 
             Maze maze = Maze.GetInstance();
             maze.Generate(8);

@@ -154,7 +154,20 @@ namespace MazeTest
 
 
             //place monsters here--------------------------------------------------------
+            Random rand = new Random();
+            int placedCount = 0, monsterCount = (size / 3); // if 10, 3 monsters
+            int leftCoord, rightCoord;
 
+            while (placedCount != monsterCount)
+            {
+                leftCoord = rand.Next(2, size);
+                rightCoord = rand.Next(2, size);
+                if ((EnumMazeObject)(maze[leftCoord][rightCoord]) == EnumMazeObject.Air)
+                {
+                    maze[leftCoord][rightCoord] = (int)EnumMazeObject.Monster;
+                    placedCount++;
+                }
+            }
 
             //turn into node system
             return arrayToGraph(maze);
