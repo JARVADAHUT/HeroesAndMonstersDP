@@ -31,7 +31,7 @@ namespace DesignPatterns___DC_Design
         {
             private StatAugmentCommand _cmd;
 
-            public StatAugmentCommandThread(StatAugmentCommand cmd)
+            internal StatAugmentCommandThread(StatAugmentCommand cmd)
             {
                 _cmd = cmd;
             }
