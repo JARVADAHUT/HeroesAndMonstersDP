@@ -7,12 +7,12 @@ namespace DesignPatterns___DC_Design
     {
         private List<DungeonCharacter> targets;
 
-        public void addTarget(DungeonCharacter target)
+        public void AddTarget(DungeonCharacter target)
         {
             this.targets.Add(target);
         }
 
-        public void removeTarget(DungeonCharacter target)
+        public void RemoveTarget(DungeonCharacter target)
         {
             this.targets.Remove(target);
         }
@@ -22,10 +22,10 @@ namespace DesignPatterns___DC_Design
             return this.targets.GetEnumerator();
         }
 
-        //I'm not sure what this method stud is.
+        //I'm not sure what this method stub is.
         System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
         {
-            throw new NotImplementedException();
+            return GetEnumerator();
         }
     }
 }

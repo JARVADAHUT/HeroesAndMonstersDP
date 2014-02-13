@@ -14,3 +14,6 @@ C:\Users\mcandertoad\Documents\GitHub\HeroesAndMonstersDP\DesignPatterns - DC De
 N:\GitStuff\HeroesAndMonstersDP\DesignPatterns - DC Design\bin\Debug\DesignPatterns - DC Design.exe.config
 N:\GitStuff\HeroesAndMonstersDP\DesignPatterns - DC Design\obj\Debug\DesignPatterns - DC Design.exe
 N:\GitStuff\HeroesAndMonstersDP\DesignPatterns - DC Design\obj\Debug\DesignPatterns - DC Design.pdb
+N:\GitStuff\HeroesAndMonstersDP\DesignPatterns - DC Design\bin\Debug\DesignPatterns - DC Design.exe
+N:\GitStuff\HeroesAndMonstersDP\DesignPatterns - DC Design\bin\Debug\DesignPatterns - DC Design.pdb
+N:\GitStuff\HeroesAndMonstersDP\DesignPatterns - DC Design\obj\Debug\HeroesAndMonstersDP.csprojResolveAssemblyReference.cache

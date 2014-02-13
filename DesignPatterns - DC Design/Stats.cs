@@ -9,20 +9,20 @@ namespace DesignPatterns___DC_Design
     {
 
 
-        Dictionary<PublicEnums.StatsType, int> _stats;
+        Dictionary<StatsType, int> _stats;
 
         public Stats()
         {
-            _stats = new Dictionary<PublicEnums.StatsType, int>();
+            _stats = new Dictionary<StatsType, int>();
         }
 
-        public Stats(Dictionary<PublicEnums.StatsType, int> stats)
+        public Stats(Dictionary<StatsType, int> stats)
         {
             if (stats == null) throw new ArgumentNullException("stats");
             _stats = stats;
         }
 
-        public void ApplyAugment(PublicEnums.StatsType stat, int magnitude)
+        public void ApplyAugment(StatsType stat, int magnitude)
         {
             lock (this)
             {
@@ -34,7 +34,7 @@ namespace DesignPatterns___DC_Design
         }
 
 
-        public void RemoveAugment(PublicEnums.StatsType stat, int magnitude)
+        public void RemoveAugment(StatsType stat, int magnitude)
         {
             lock (this)
             {
@@ -45,7 +45,7 @@ namespace DesignPatterns___DC_Design
             }
         }
 
-        public bool HasStat(PublicEnums.StatsType stat)
+        public bool HasStat(StatsType stat)
         {
             lock (this)
             {
@@ -53,20 +53,20 @@ namespace DesignPatterns___DC_Design
             }
         }
 
-        private int ValidateStat(PublicEnums.StatsType stat, int magnitude)
+        private int ValidateStat(StatsType stat, int magnitude)
         {
             switch (stat)
             {
-                case (PublicEnums.StatsType.CurHp):
-                    if (magnitude > _stats[PublicEnums.StatsType.MaxHp])
+                case (StatsType.CurHp):
+                    if (magnitude > _stats[StatsType.MaxHp])
                     {
-                        magnitude = _stats[PublicEnums.StatsType.MaxHp];
+                        magnitude = _stats[StatsType.MaxHp];
                     }
                     break;
-                case (PublicEnums.StatsType.CurResources):
-                    if (magnitude > _stats[PublicEnums.StatsType.MaxResources])
+                case (StatsType.CurResources):
+                    if (magnitude > _stats[StatsType.MaxResources])
                     {
-                        magnitude = _stats[PublicEnums.StatsType.MaxResources];
+                        magnitude = _stats[StatsType.MaxResources];
                     }
                     break;
             }
