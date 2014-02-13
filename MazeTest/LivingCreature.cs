@@ -11,23 +11,23 @@ namespace MazeTest
     {
         //protected DungeonCharacter dc;
 
-        protected string _name;
-
         private EnumDirection _lastMoveDirection;
 
 
-        protected LivingCreature(IInteractionType i) : base(i)
+        protected LivingCreature() : base(null)
         {
 
         }
 
         public abstract void Die();
-
         public abstract void Exit();
 
+
         public new abstract EnumMazeObject GetInteractionType();
+
         public new abstract void Interact(LivingCreature lc);
-        public abstract override string ToString();
+
+        public abstract string ToString();
 
 
         public void Interact(EnumDirection dir)
@@ -69,13 +69,13 @@ namespace MazeTest
             }
         }
 
-        public virtual void Move()
+        public void Move()
         {
-            MazeMover.Move(this.GetLastMove(), this);
-            hook();
+            MazeMover.Move(GetLastMove(), this);
+            Hook();
         }
 
-        public virtual void hook()
+        public virtual void Hook()
         {
             
         }

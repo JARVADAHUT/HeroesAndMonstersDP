@@ -9,32 +9,35 @@ namespace MazeTest
 {
     class Monster : LivingCreature
     {
-        private const int maxWeight = 40;
+        private const int _maxWeight = 60;
+
+        //private static int = 0;
 
         public int _ID { set; get; }
-        public ArrayList _moveWeight;
+        private ArrayList _moveWeight;
 
-        public Monster() : base(null) // unsure about null 
+        public Monster() : base() // unsure about null 
         {
             HiveMind.GetInstance().RegisterSubject(this);
-            _moveWeight = new ArrayList();
+
+            //4 movement directions
+            _moveWeight = new ArrayList(4);
             for (int x = 0; x < 4; x++)
                 _moveWeight.Add(10);
+
+            SetInteraction(this);
         }
 
         public override void Die()
         {
+            SetInteraction( FMazeObjectFactory.GetMazeObject(EnumMazeObject.Air) );
+            HiveMind.GetInstance().UnregisterSubject(this);
             // possibly unregister itself from HiveMind
         }
 
         public override void Exit()
         {
-            // do nothing
-        }
-
-        public void Move()
-        {
-            // do nothing
+            // do nothing you're a monster
         }
 
         public override EnumMazeObject GetInteractionType()
@@ -44,6 +47,7 @@ namespace MazeTest
 
         public override void Interact(LivingCreature lc)
         {
+            this.Die();
             // do nothing
         }
 
@@ -52,9 +56,9 @@ namespace MazeTest
             return "m";
         }
 
-        public override void hook()
+        public override void Hook()
         {
-            if ((int)_moveWeight[(int)(this.GetLastMove())] == maxWeight)
+            if ((int)_moveWeight[(int)(this.GetLastMove())] == _maxWeight)
                 _moveWeight[(int)(this.GetLastMove())] = 10;
             else
                 _moveWeight[(int)(this.GetLastMove())] = (int)(_moveWeight[(int)(this.GetLastMove())]) + 10;
@@ -65,5 +69,9 @@ namespace MazeTest
             return _moveWeight;
         }
 
+        public bool Equals(Monster otherMonster)
+        {
+            return _ID == otherMonster._ID;
+        }
     }
 }

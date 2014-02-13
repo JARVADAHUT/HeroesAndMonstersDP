@@ -43,3 +43,9 @@ C:\Users\Ryan\Documents\GitHub\HeroesAndMonstersDP\MazeTest\obj\Debug\MazeTest.p
 C:\Users\Ryan\Documents\GitHub\HeroesAndMonstersDP\MazeTest\obj\Debug\MazeTest.csprojResolveAssemblyReference.cache
 C:\Users\Ryan\Documents\GitHub\HeroesAndMonstersDP\MazeTest\bin\Debug\MazeTest.exe
 C:\Users\Ryan\Documents\GitHub\HeroesAndMonstersDP\MazeTest\bin\Debug\MazeTest.pdb
+N:\HEROSANDMONSTERS AHHHH\newestversion\MazeTest\bin\Debug\MazeTest.exe.config
+N:\HEROSANDMONSTERS AHHHH\newestversion\MazeTest\obj\Debug\MazeTest.exe
+N:\HEROSANDMONSTERS AHHHH\newestversion\MazeTest\obj\Debug\MazeTest.pdb
+N:\HEROSANDMONSTERS AHHHH\newestversion\MazeTest\bin\Debug\MazeTest.exe
+N:\HEROSANDMONSTERS AHHHH\newestversion\MazeTest\bin\Debug\MazeTest.pdb
+N:\HEROSANDMONSTERS AHHHH\newestversion\MazeTest\obj\Debug\MazeTest.csprojResolveAssemblyReference.cache

@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 
 namespace MazeTest
 {
-    /*abstract*/ class Player : LivingCreature
+    class Player : LivingCreature
     {
         private static Player _thisPlayer = null;
-        //singleton
 
-        private Player() : base(_thisPlayer)
+        private Player() : base()
         {
+            SetInteraction(this);
             //this.dc = new Hero();
         }
 
@@ -24,7 +24,7 @@ namespace MazeTest
 
         public override void Die()
         {
-
+            
         }
 
         public override string ToString()
@@ -34,7 +34,7 @@ namespace MazeTest
 
         public override void Interact(LivingCreature l)
         {
-            
+            l.Die();
         }
 
 

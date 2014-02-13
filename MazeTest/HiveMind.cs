@@ -17,6 +17,7 @@ namespace MazeTest
 
         private static HiveMind _Hive = null;
         private ArrayList _minions;
+        private static List<Monster> _removeQueue= new List<Monster>();
 
         private HiveMind()
         {
@@ -41,19 +42,20 @@ namespace MazeTest
 
         public void UnregisterSubject(Monster m) // can't use _minions.remove(m) unless we override object.Equals()
         {
-            Monster monster;
-            for (int x = 0; x < _minions.Count-1; x++)
-            {
-                monster = (Monster)_minions[x];
-                if (monster._ID == m._ID)
-                {
-                    _minions.RemoveAt(x);
-                    break;
-                }
-            }
+            _removeQueue.Add(m);
+            //Monster monster;
+            //for (int x = 0; x < _minions.Count-1; x++)
+            //{
+            //    monster = (Monster)_minions[x];
+            //    if (monster.ID == m.ID)
+            //    {
+            //        _minions.RemoveAt(x);
+            //        break;
+            //    }
+            //}
         }
 
-        public void moveMinions() // serves as delegate
+        public void MoveMinions() // serves as delegate
         {
             ArrayList weight;
             Random random = new Random();
@@ -90,6 +92,16 @@ namespace MazeTest
 
             } // end foreach
 
+            UnregisterRemoveQueue();
+
+        }
+
+        private void UnregisterRemoveQueue()
+        {
+            foreach (Monster monster in _removeQueue)
+            {
+                _minions.Remove(monster);
+            }
         } // end moveMinions
 
     }

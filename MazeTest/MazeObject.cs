@@ -19,6 +19,11 @@ namespace MazeTest
             _interaction = i;
         }
 
+        protected void SetInteraction(IInteractionType i)
+        {
+            _interaction = i;
+        }
+
         public void Interact(LivingCreature creature)
         {
             _interaction.Interact(creature);
@@ -48,5 +53,8 @@ namespace MazeTest
         {
             return _interaction.GetInteractionType();
         }
+
+
+
     }
 }
