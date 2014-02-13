@@ -47,7 +47,10 @@ namespace DesignPatterns___DC_Design
 
         public bool HasStat(PublicEnums.StatsType stat)
         {
-            return _stats.ContainsKey(stat);
+            lock (this)
+            {
+                return _stats.ContainsKey(stat);
+            }
         }
 
         private int ValidateStat(PublicEnums.StatsType stat, int magnitude)
