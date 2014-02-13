@@ -74,7 +74,11 @@ namespace DesignPatterns___DC_Design
 
         public override string ToString()
         {
-            return _stats.Keys.Aggregate("", (current, s) => current + (s + ":  " + _stats[s] + "\n"));
+            lock (this)
+            {
+                return _stats.Keys.Aggregate("", (current, s) => current + (s + ":  " + _stats[s] + "\n"));
+
+            }
         }
 
         /*

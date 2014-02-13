@@ -11,3 +11,6 @@ C:\Users\mcandertoad\Documents\GitHub\HeroesAndMonstersDP\DesignPatterns - DC De
 \\netstorage.eastern.ewu.edu\amccall\GitStuff\HeroesAndMonstersDP\DesignPatterns - DC Design\bin\Debug\DesignPatterns - DC Design.pdb
 \\netstorage.eastern.ewu.edu\amccall\GitStuff\HeroesAndMonstersDP\DesignPatterns - DC Design\obj\Debug\DesignPatterns - DC Design.exe
 \\netstorage.eastern.ewu.edu\amccall\GitStuff\HeroesAndMonstersDP\DesignPatterns - DC Design\obj\Debug\DesignPatterns - DC Design.pdb
+N:\GitStuff\HeroesAndMonstersDP\DesignPatterns - DC Design\bin\Debug\DesignPatterns - DC Design.exe.config
+N:\GitStuff\HeroesAndMonstersDP\DesignPatterns - DC Design\obj\Debug\DesignPatterns - DC Design.exe
+N:\GitStuff\HeroesAndMonstersDP\DesignPatterns - DC Design\obj\Debug\DesignPatterns - DC Design.pdb
