@@ -1,8 +1,5 @@
 ﻿namespace DesignPatterns___DC_Design
 {
-    public class PublicEnums
-    {
-
         public enum StatsType
         {
             MaxHp,
@@ -23,7 +20,6 @@
             Legs,
             Feet,
         }
-    }
 
 
 }
