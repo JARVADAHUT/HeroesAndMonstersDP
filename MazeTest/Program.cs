@@ -41,10 +41,11 @@ namespace MazeTest
                         break;
                 }
 
-
+                h.moveMinions();
 
                 Maze.GetInstance().Display();
 
+                
 
 
             }

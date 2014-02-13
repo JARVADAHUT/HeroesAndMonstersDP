@@ -9,7 +9,7 @@ namespace MazeTest
 {
     class Monster : LivingCreature
     {
-        private const int maxWeight = 3;
+        private const int maxWeight = 40;
 
         public int _ID { set; get; }
         public ArrayList _moveWeight;
@@ -19,7 +19,7 @@ namespace MazeTest
             HiveMind.GetInstance().RegisterSubject(this);
             _moveWeight = new ArrayList();
             for (int x = 0; x < 4; x++)
-                _moveWeight.Add(0);
+                _moveWeight.Add(10);
         }
 
         public override void Die()
@@ -32,7 +32,7 @@ namespace MazeTest
             // do nothing
         }
 
-        public override void Move()
+        public void Move()
         {
             // do nothing
         }
@@ -44,7 +44,7 @@ namespace MazeTest
 
         public override void Interact(LivingCreature lc)
         {
-            throw new NotImplementedException();
+            // do nothing
         }
 
         public override string ToString()
@@ -54,8 +54,10 @@ namespace MazeTest
 
         public override void hook()
         {
-            if ((int)_moveWeight[(int)(this.GetLastMove())] != maxWeight)
-                _moveWeight[(int)(this.GetLastMove())] = (int)(_moveWeight[(int)(this.GetLastMove())]) + 1;
+            if ((int)_moveWeight[(int)(this.GetLastMove())] == maxWeight)
+                _moveWeight[(int)(this.GetLastMove())] = 10;
+            else
+                _moveWeight[(int)(this.GetLastMove())] = (int)(_moveWeight[(int)(this.GetLastMove())]) + 10;
         }
 
         public ArrayList GetMoveWeight()

@@ -69,13 +69,13 @@ namespace MazeTest
             }
         }
 
-        public void Move()
+        public virtual void Move()
         {
             MazeMover.Move(this.GetLastMove(), this);
             hook();
         }
 
-        public void hook()
+        public virtual void hook()
         {
             
         }

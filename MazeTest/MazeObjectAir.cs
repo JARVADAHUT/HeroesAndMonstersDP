@@ -20,7 +20,7 @@ namespace MazeTest
 
         public override string ToString()
         {
-            return "a";
+            return " ";
         }
 
         public EnumMazeObject GetInteractionType()
