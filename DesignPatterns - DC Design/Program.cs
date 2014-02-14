@@ -26,18 +26,18 @@ namespace DesignPatterns___DC_Design
                 StatAugmentCommand test = new StatAugmentCommand(StatsType.CurHp, stats, -5);
                 augmentMgr.ReceiveCommand(test);
             }
-<<<<<<< HEAD
+
             catch (ArgumentException e)
             {
                 Console.WriteLine("");
             }
 
-=======
+
             catch (Exception e)
             {
                 
             }
->>>>>>> a8481cdb97ee537d30672ae55460493b9b9ebf57
+
             StatAugmentCommand augment = new StatAugmentCommand(StatsType.Agility,stats,-5,2,2);
             augmentMgr.ReceiveCommand(augment);
             StatAugmentCommand augment1 = new StatAugmentCommand(StatsType.Strength, stats, -5, 3, 2);

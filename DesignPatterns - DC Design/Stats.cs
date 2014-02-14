@@ -53,6 +53,13 @@ namespace DesignPatterns___DC_Design
             }
         }
 
+        public int GetStat(StatsType stat)
+        {
+            if (!HasStat(stat))
+                throw new ArgumentException("Stats does not contain stat:" + stat);
+            return _stats[stat];
+        }
+
         private int ValidateStat(StatsType stat, int magnitude)
         {
             switch (stat)

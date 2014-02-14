@@ -42,6 +42,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BattleBuilder.cs" />
+    <Compile Include="IMonsterTurnAI.cs" />
+    <Compile Include="Monster.cs" />
+    <Compile Include="MonsterTurnManager.cs" />
     <Compile Include="DungeonCharacter.cs" />
     <Compile Include="CharacterGearSet.cs" />
     <Compile Include="Hero.cs" />
