@@ -8,7 +8,7 @@ namespace DesignPatterns___DC_Design
     public class Stats
     {
 
-
+        
         Dictionary<StatsType, int> _stats;
 
         public Stats()

@@ -8,7 +8,7 @@ namespace DesignPatterns___DC_Design
         private Stats _dcStats;
         CharacterGearSet _gearInfo;
         public string Name { get; set; }
-
+        
         public Stats DCStats
         {
             get { return _dcStats; } 
