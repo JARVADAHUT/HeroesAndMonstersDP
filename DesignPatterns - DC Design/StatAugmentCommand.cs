@@ -23,6 +23,9 @@ namespace DesignPatterns___DC_Design
             this.Magnitude = magnitude;
             this.Delay = delay;
             this.Duration = duration;
+
+            StatAugmentManager.GetInstance().SendCommand(this);
+
         }
 
 
@@ -43,13 +46,13 @@ namespace DesignPatterns___DC_Design
 
         public void ApplyAugment()
         {
-            _characterStats.ApplyAugment(Stat, Magnitude);
+            _characterStats.AugmentStat(Stat, Magnitude);
         }
 
 
         public void RemoveAugment()
         {
-            _characterStats.RemoveAugment(Stat, Magnitude);
+            _characterStats.AugmentStat(Stat, -1 * Magnitude);
         }
 
 

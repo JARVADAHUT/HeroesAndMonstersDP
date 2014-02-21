@@ -5,21 +5,21 @@ namespace DesignPatterns___DC_Design
 {
     class Target : IEnumerable<DungeonCharacter>
     {
-        private List<DungeonCharacter> targets;
+        private List<DungeonCharacter> _targets;
 
         public void AddTarget(DungeonCharacter target)
         {
-            this.targets.Add(target);
+            this._targets.Add(target);
         }
 
         public void RemoveTarget(DungeonCharacter target)
         {
-            this.targets.Remove(target);
+            this._targets.Remove(target);
         }
 
         public IEnumerator<DungeonCharacter> GetEnumerator()
         {
-            return this.targets.GetEnumerator();
+            return this._targets.GetEnumerator();
         }
 
         //I'm not sure what this method stub is.

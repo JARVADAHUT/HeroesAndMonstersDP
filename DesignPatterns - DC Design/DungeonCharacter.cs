@@ -14,7 +14,7 @@ namespace DesignPatterns___DC_Design
             get { return _dcStats; } 
         }
 
-        List<ICombatAction> _combatActions;
+        List<ICombatAction> _combatActions; //Needs Changed for factory to be in place
         Inventory inventory;
 
         public abstract void useAction(int ActionNumber); //This is just an idea

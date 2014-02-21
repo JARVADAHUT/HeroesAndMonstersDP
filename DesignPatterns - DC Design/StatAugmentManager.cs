@@ -16,7 +16,7 @@ namespace DesignPatterns___DC_Design
             return _instanceStatAugmentManager ?? (_instanceStatAugmentManager = new StatAugmentManager());
         }
 
-        public void ReceiveCommand(StatAugmentCommand cmd)
+        public void SendCommand(StatAugmentCommand cmd)
         {
 
             var sacThread = new StatAugmentCommandThread(cmd);

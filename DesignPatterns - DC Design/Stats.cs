@@ -22,24 +22,12 @@ namespace DesignPatterns___DC_Design
             _stats = stats;
         }
 
-        public void ApplyAugment(StatsType stat, int magnitude)
+        public void AugmentStat(StatsType stat, int magnitude)
         {
             lock (this)
             {
                 int moddingStat = _stats[stat];
                 moddingStat += magnitude;
-                moddingStat = ValidateStat(stat, moddingStat);
-                _stats[stat] = moddingStat;
-            }
-        }
-
-
-        public void RemoveAugment(StatsType stat, int magnitude)
-        {
-            lock (this)
-            {
-                int moddingStat = _stats[stat];
-                moddingStat -= magnitude;
                 moddingStat = ValidateStat(stat, moddingStat);
                 _stats[stat] = moddingStat;
             }
