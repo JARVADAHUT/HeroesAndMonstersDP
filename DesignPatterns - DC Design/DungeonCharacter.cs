@@ -6,28 +6,20 @@ namespace DesignPatterns___DC_Design
     abstract class DungeonCharacter
     {
         private Stats _dcStats;
-        CharacterGearSet _gearInfo;
         public string Name { get; set; }
-        
+
+        private AttackFactory _attackFactory;
+
         public Stats DCStats
         {
-            get { return _dcStats; } 
+            get { return _dcStats; }
         }
 
-        List<ICombatAction> _combatActions; //Needs Changed for factory to be in place
-        Inventory inventory;
-
-        public abstract void useAction(int ActionNumber); //This is just an idea
-
-        //Returns the index number of the action (used above)
-        public int registerAction(ICombatAction action)
+        protected DungeonCharacter(string name, Stats stats, AttackFactory factory)
         {
-            if (this._combatActions.Contains(action))
-                throw new ArgumentException("The Action is already registered with this character");
-            this._combatActions.Add(action);
-            return this._combatActions.Count - 1;
+            this.Name = name;
+            this._dcStats = stats;
+            this._attackFactory = factory;
         }
-
-
     }
 }

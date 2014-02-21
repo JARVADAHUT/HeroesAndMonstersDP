@@ -42,8 +42,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BattleBuilder.cs" />
+    <Compile Include="HeroAttackFactory.cs" />
     <Compile Include="IMonsterTurnAI.cs" />
     <Compile Include="Monster.cs" />
+    <Compile Include="MonsterAttackFactory.cs" />
     <Compile Include="MonsterTurnManager.cs" />
     <Compile Include="DungeonCharacter.cs" />
     <Compile Include="CharacterGearSet.cs" />
@@ -53,9 +55,9 @@
     <Compile Include="IPotion.cs" />
     <Compile Include="PublicEnums.cs" />
     <Compile Include="StatAugmentCommand.cs" />
+    <Compile Include="AttackFactory.cs" />
     <Compile Include="StatAugmentManager.cs" />
     <Compile Include="Stats.cs" />
-    <Compile Include="ICombatAction.cs" />
     <Compile Include="IGear.cs" />
     <Compile Include="NullGear.cs" />
     <Compile Include="Program.cs" />
